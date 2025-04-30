@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GameShowcase - Sua Vitrine de Jogos</title>
+    <title>Rei Das Smurfs - Sua Loja de Contas Smurf</title>
     <style>
         :root {
-            --primary: #7e22ce;
-            --primary-dark: #581c87;
-            --secondary: #2563eb;
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #7e22ce;
             --dark: #18181b;
             --light: #f1f5f9;
             --gray: #64748b;
@@ -107,6 +107,9 @@
             font-weight: bold;
             transition: all 0.3s;
             text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
         }
         
         .btn-primary {
@@ -116,6 +119,26 @@
         
         .btn-primary:hover {
             background-color: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+        
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: white;
+        }
+        
+        .btn-whatsapp:hover {
+            background-color: #128C7E;
+            transform: translateY(-3px);
+        }
+        
+        .btn-discord {
+            background-color: #5865F2;
+            color: white;
+        }
+        
+        .btn-discord:hover {
+            background-color: #4752C4;
             transform: translateY(-3px);
         }
         
@@ -165,13 +188,13 @@
             padding: 4rem 0;
         }
         
-        .games-grid {
+        .accounts-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 2rem;
         }
         
-        .game-card {
+        .account-card {
             background-color: #1e293b;
             border-radius: 10px;
             overflow: hidden;
@@ -181,97 +204,74 @@
             flex-direction: column;
         }
         
-        .game-card:hover {
+        .account-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
         
-        .game-image {
+        .account-image {
             height: 200px;
             width: 100%;
             object-fit: cover;
         }
         
-        .game-info {
+        .account-info {
             padding: 1.5rem;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
         }
         
-        .game-title {
+        .account-title {
             font-size: 1.5rem;
             margin-bottom: 0.5rem;
             color: var(--light);
         }
         
-        .game-description {
+        .account-description {
             color: var(--gray);
             margin-bottom: 1rem;
             flex-grow: 1;
         }
         
-        .game-meta {
+        .account-meta {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-top: auto;
         }
         
-        .game-platform {
+        .account-game {
             display: flex;
+            align-items: center;
             gap: 0.5rem;
+            font-weight: 500;
+            color: var(--gray);
         }
         
-        .platform-icon {
-            width: 20px;
-            height: 20px;
-            background-color: var(--gray);
-            border-radius: 50%;
-        }
-        
-        .game-price {
+        .account-price {
             font-weight: bold;
             color: var(--primary);
+            font-size: 1.2rem;
         }
         
-        .all-games {
+        .all-accounts {
             padding: 4rem 0;
             background-color: #0f172a;
         }
         
-        .newsletter {
+        .contact {
             padding: 4rem 0;
             background-color: #1e293b;
             text-align: center;
         }
         
-        .newsletter-form {
+        .contact-buttons {
             display: flex;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-        
-        .newsletter-input {
-            flex-grow: 1;
-            padding: 0.8rem 1rem;
-            border: none;
-            border-radius: 5px 0 0 5px;
-            outline: none;
-        }
-        
-        .newsletter-btn {
-            background-color: var(--primary);
-            color: white;
-            border: none;
-            border-radius: 0 5px 5px 0;
-            padding: 0 1.5rem;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        
-        .newsletter-btn:hover {
-            background-color: var(--primary-dark);
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
         }
         
         footer {
@@ -318,6 +318,31 @@
             color: var(--gray);
         }
         
+        /* Badge de nível - para contas */
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        
+        .badge-level {
+            background-color: #9333ea;
+            color: white;
+        }
+        
+        .badge-ranked {
+            background-color: #e11d48;
+            color: white;
+        }
+        
+        .badge-new {
+            background-color: #16a34a;
+            color: white;
+        }
+        
         /* Responsividade */
         @media (max-width: 768px) {
             .nav-links {
@@ -331,94 +356,100 @@
             .hero p {
                 font-size: 1rem;
             }
+            
+            .contact-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">Game<span>Showcase</span></div>
+            <div class="logo">Rei<span>Das</span>Smurfs</div>
             <div class="nav-links">
                 <a href="#featured">Destaques</a>
-                <a href="#all-games">Catálogo</a>
-                <a href="#about">Sobre</a>
+                <a href="#all-accounts">Catálogo</a>
                 <a href="#contact">Contato</a>
+                <a href="#about">Sobre</a>
             </div>
         </nav>
     </header>
 
     <section class="hero">
         <div class="hero-content">
-            <h1>Descubra os Melhores Jogos</h1>
-            <p>Sua vitrine digital com os jogos mais incríveis e novidades do mundo dos games. Explore nossa coleção e encontre sua próxima aventura.</p>
-            <a href="#all-games" class="btn btn-primary">Ver Catálogo</a>
+            <h1>A Melhor Loja de Contas Smurf</h1>
+            <p>Contas Smurf de qualidade para diversos jogos, com preços imbatíveis e entrega imediata. Eleve seu gameplay com uma nova conta personalizada!</p>
+            <a href="#all-accounts" class="btn btn-primary">Ver Catálogo</a>
         </div>
     </section>
 
     <section class="categories">
         <div class="container">
-            <h2 class="section-title">Categorias</h2>
+            <h2 class="section-title">Jogos Disponíveis</h2>
             <div class="category-container">
                 <div class="category active">Todos</div>
-                <div class="category">Ação</div>
-                <div class="category">Aventura</div>
-                <div class="category">RPG</div>
-                <div class="category">Estratégia</div>
-                <div class="category">Simulação</div>
-                <div class="category">Esportes</div>
-                <div class="category">Indie</div>
+                <div class="category">League of Legends</div>
+                <div class="category">Valorant</div>
+                <div class="category">CS:GO 2</div>
+                <div class="category">Dota 2</div>
+                <div class="category">Fortnite</div>
+                <div class="category">Overwatch 2</div>
+                <div class="category">Outros</div>
             </div>
         </div>
     </section>
 
     <section class="featured" id="featured">
         <div class="container">
-            <h2 class="section-title">Jogos em Destaque</h2>
-            <div class="games-grid">
-                <!-- Jogo 1 -->
-                <div class="game-card">
-                    <img src="/api/placeholder/400/200" alt="Jogo 1" class="game-image">
-                    <div class="game-info">
-                        <h3 class="game-title">Nova Era Espacial</h3>
-                        <p class="game-description">Um épico jogo de exploração espacial onde você comanda sua própria nave em um universo aberto cheio de mistérios.</p>
-                        <div class="game-meta">
-                            <div class="game-platform">
-                                <div class="platform-icon"></div>
-                                <div class="platform-icon"></div>
-                            </div>
-                            <div class="game-price">R$ 89,90</div>
+            <h2 class="section-title">Contas em Destaque</h2>
+            <div class="accounts-grid">
+                <!-- Conta 1 -->
+                <div class="account-card">
+                    <img src="/api/placeholder/400/200" alt="Conta LOL" class="account-image">
+                    <div class="account-info">
+                        <h3 class="account-title">
+                            <span class="badge badge-level">Nível 30</span>
+                            <span class="badge badge-ranked">Unranked</span>
+                            LOL Premium
+                        </h3>
+                        <p class="account-description">Conta League of Legends nível 30, pronta para ranked, 20 campeões desbloqueados, 3 skins raras.</p>
+                        <div class="account-meta">
+                            <div class="account-game">League of Legends</div>
+                            <div class="account-price">R$ 39,90</div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Jogo 2 -->
-                <div class="game-card">
-                    <img src="/api/placeholder/400/200" alt="Jogo 2" class="game-image">
-                    <div class="game-info">
-                        <h3 class="game-title">Lendas do Abismo</h3>
-                        <p class="game-description">Mergulhe em um mundo de fantasia medieval com personagens memoráveis e um sistema de combate revolucionário.</p>
-                        <div class="game-meta">
-                            <div class="game-platform">
-                                <div class="platform-icon"></div>
-                                <div class="platform-icon"></div>
-                                <div class="platform-icon"></div>
-                            </div>
-                            <div class="game-price">R$ 129,90</div>
+                <!-- Conta 2 -->
+                <div class="account-card">
+                    <img src="/api/placeholder/400/200" alt="Conta Valorant" class="account-image">
+                    <div class="account-info">
+                        <h3 class="account-title">
+                            <span class="badge badge-new">Nova</span>
+                            Valorant Iniciante
+                        </h3>
+                        <p class="account-description">Conta Valorant nova, 5 agentes desbloqueados, coleção inicial de skins, pronta para uso.</p>
+                        <div class="account-meta">
+                            <div class="account-game">Valorant</div>
+                            <div class="account-price">R$ 29,90</div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Jogo 3 -->
-                <div class="game-card">
-                    <img src="/api/placeholder/400/200" alt="Jogo 3" class="game-image">
-                    <div class="game-info">
-                        <h3 class="game-title">Corrida Futurista</h3>
-                        <p class="game-description">Pilote veículos futuristas em pistas impossíveis a velocidades alucinantes neste jogo de corrida inovador.</p>
-                        <div class="game-meta">
-                            <div class="game-platform">
-                                <div class="platform-icon"></div>
-                            </div>
-                            <div class="game-price">R$ 69,90</div>
+                <!-- Conta 3 -->
+                <div class="account-card">
+                    <img src="/api/placeholder/400/200" alt="Conta CS:GO 2" class="account-image">
+                    <div class="account-info">
+                        <h3 class="account-title">
+                            <span class="badge badge-ranked">Gold Nova</span>
+                            CS:GO 2 Elite
+                        </h3>
+                        <p class="account-description">Conta CS:GO 2 com patente Gold Nova, coleção de skins, prime ativado e boa reputação.</p>
+                        <div class="account-meta">
+                            <div class="account-game">CS:GO 2</div>
+                            <div class="account-price">R$ 69,90</div>
                         </div>
                     </div>
                 </div>
@@ -426,103 +457,102 @@
         </div>
     </section>
 
-    <section class="all-games" id="all-games">
+    <section class="all-accounts" id="all-accounts">
         <div class="container">
             <h2 class="section-title">Catálogo Completo</h2>
-            <div class="games-grid">
-                <!-- Jogo 1 -->
-                <div class="game-card">
-                    <img src="/api/placeholder/400/200" alt="Jogo 1" class="game-image">
-                    <div class="game-info">
-                        <h3 class="game-title">Nova Era Espacial</h3>
-                        <p class="game-description">Um épico jogo de exploração espacial onde você comanda sua própria nave.</p>
-                        <div class="game-meta">
-                            <div class="game-platform">
-                                <div class="platform-icon"></div>
-                                <div class="platform-icon"></div>
-                            </div>
-                            <div class="game-price">R$ 89,90</div>
+            <div class="accounts-grid">
+                <!-- Conta 1 -->
+                <div class="account-card">
+                    <img src="/api/placeholder/400/200" alt="Conta LOL" class="account-image">
+                    <div class="account-info">
+                        <h3 class="account-title">
+                            <span class="badge badge-level">Nível 30</span>
+                            LOL Premium
+                        </h3>
+                        <p class="account-description">Conta League of Legends nível 30, pronta para ranked.</p>
+                        <div class="account-meta">
+                            <div class="account-game">League of Legends</div>
+                            <div class="account-price">R$ 39,90</div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Jogo 2 -->
-                <div class="game-card">
-                    <img src="/api/placeholder/400/200" alt="Jogo 2" class="game-image">
-                    <div class="game-info">
-                        <h3 class="game-title">Lendas do Abismo</h3>
-                        <p class="game-description">Mergulhe em um mundo de fantasia medieval com personagens memoráveis.</p>
-                        <div class="game-meta">
-                            <div class="game-platform">
-                                <div class="platform-icon"></div>
-                                <div class="platform-icon"></div>
-                                <div class="platform-icon"></div>
-                            </div>
-                            <div class="game-price">R$ 129,90</div>
+                <!-- Conta 2 -->
+                <div class="account-card">
+                    <img src="/api/placeholder/400/200" alt="Conta Valorant" class="account-image">
+                    <div class="account-info">
+                        <h3 class="account-title">
+                            <span class="badge badge-new">Nova</span>
+                            Valorant Iniciante
+                        </h3>
+                        <p class="account-description">Conta Valorant nova, 5 agentes desbloqueados.</p>
+                        <div class="account-meta">
+                            <div class="account-game">Valorant</div>
+                            <div class="account-price">R$ 29,90</div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Jogo 3 -->
-                <div class="game-card">
-                    <img src="/api/placeholder/400/200" alt="Jogo 3" class="game-image">
-                    <div class="game-info">
-                        <h3 class="game-title">Corrida Futurista</h3>
-                        <p class="game-description">Pilote veículos futuristas em pistas impossíveis a velocidades alucinantes.</p>
-                        <div class="game-meta">
-                            <div class="game-platform">
-                                <div class="platform-icon"></div>
-                            </div>
-                            <div class="game-price">R$ 69,90</div>
+                <!-- Conta 3 -->
+                <div class="account-card">
+                    <img src="/api/placeholder/400/200" alt="Conta CS:GO 2" class="account-image">
+                    <div class="account-info">
+                        <h3 class="account-title">
+                            <span class="badge badge-ranked">Gold Nova</span>
+                            CS:GO 2 Elite
+                        </h3>
+                        <p class="account-description">Conta CS:GO 2 com patente Gold Nova.</p>
+                        <div class="account-meta">
+                            <div class="account-game">CS:GO 2</div>
+                            <div class="account-price">R$ 69,90</div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Jogo 4 -->
-                <div class="game-card">
-                    <img src="/api/placeholder/400/200" alt="Jogo 4" class="game-image">
-                    <div class="game-info">
-                        <h3 class="game-title">Mistérios Urbanos</h3>
-                        <p class="game-description">Resolva crimes em uma cidade cheia de segredos neste thriller investigativo.</p>
-                        <div class="game-meta">
-                            <div class="game-platform">
-                                <div class="platform-icon"></div>
-                                <div class="platform-icon"></div>
-                            </div>
-                            <div class="game-price">R$ 79,90</div>
+                <!-- Conta 4 -->
+                <div class="account-card">
+                    <img src="/api/placeholder/400/200" alt="Conta Dota 2" class="account-image">
+                    <div class="account-info">
+                        <h3 class="account-title">
+                            <span class="badge badge-ranked">3.5K MMR</span>
+                            Dota 2 Pro
+                        </h3>
+                        <p class="account-description">Conta Dota 2 com 3.5K MMR, coleção de itens raros.</p>
+                        <div class="account-meta">
+                            <div class="account-game">Dota 2</div>
+                            <div class="account-price">R$ 59,90</div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Jogo 5 -->
-                <div class="game-card">
-                    <img src="/api/placeholder/400/200" alt="Jogo 5" class="game-image">
-                    <div class="game-info">
-                        <h3 class="game-title">Império das Sombras</h3>
-                        <p class="game-description">Construa seu império nas sombras e domine o submundo criminal neste jogo de estratégia.</p>
-                        <div class="game-meta">
-                            <div class="game-platform">
-                                <div class="platform-icon"></div>
-                                <div class="platform-icon"></div>
-                            </div>
-                            <div class="game-price">R$ 99,90</div>
+                <!-- Conta 5 -->
+                <div class="account-card">
+                    <img src="/api/placeholder/400/200" alt="Conta Fortnite" class="account-image">
+                    <div class="account-info">
+                        <h3 class="account-title">
+                            <span class="badge badge-level">Nível 75</span>
+                            Fortnite Legacy
+                        </h3>
+                        <p class="account-description">Conta Fortnite com skins de temporadas antigas e V-Bucks.</p>
+                        <div class="account-meta">
+                            <div class="account-game">Fortnite</div>
+                            <div class="account-price">R$ 89,90</div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Jogo 6 -->
-                <div class="game-card">
-                    <img src="/api/placeholder/400/200" alt="Jogo 6" class="game-image">
-                    <div class="game-info">
-                        <h3 class="game-title">Sobrevivência Extrema</h3>
-                        <p class="game-description">Sobreviva em ambientes hostis e construa seu abrigo neste desafiador jogo de sobrevivência.</p>
-                        <div class="game-meta">
-                            <div class="game-platform">
-                                <div class="platform-icon"></div>
-                                <div class="platform-icon"></div>
-                                <div class="platform-icon"></div>
-                            </div>
-                            <div class="game-price">R$ 59,90</div>
+                <!-- Conta 6 -->
+                <div class="account-card">
+                    <img src="/api/placeholder/400/200" alt="Conta Overwatch 2" class="account-image">
+                    <div class="account-info">
+                        <h3 class="account-title">
+                            <span class="badge badge-ranked">Platinum</span>
+                            Overwatch 2 Premium
+                        </h3>
+                        <p class="account-description">Conta Overwatch 2 ranked Platinum com todos os heróis e várias skins.</p>
+                        <div class="account-meta">
+                            <div class="account-game">Overwatch 2</div>
+                            <div class="account-price">R$ 49,90</div>
                         </div>
                     </div>
                 </div>
@@ -530,14 +560,18 @@
         </div>
     </section>
 
-    <section class="newsletter">
+    <section class="contact" id="contact">
         <div class="container">
-            <h2 class="section-title">Fique por dentro das novidades!</h2>
-            <p>Cadastre-se para receber atualizações sobre novos lançamentos e promoções especiais.</p>
-            <form class="newsletter-form">
-                <input type="email" placeholder="Seu e-mail" class="newsletter-input">
-                <button type="submit" class="newsletter-btn">Inscrever-se</button>
-            </form>
+            <h2 class="section-title">Entre em Contato</h2>
+            <p>Ficou interessado em alguma conta? Entre em contato conosco pelo Discord ou WhatsApp para mais informações e realizar a compra.</p>
+            <div class="contact-buttons">
+                <a href="https://discord.gg/reidassmurfs" class="btn btn-discord">
+                    Discord: ReiDasSmurfs#1234
+                </a>
+                <a href="https://wa.me/5511987654321" class="btn btn-whatsapp">
+                    WhatsApp: (11) 98765-4321
+                </a>
+            </div>
         </div>
     </section>
 
@@ -545,49 +579,48 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>GameShowcase</h3>
+                    <h3>Rei Das Smurfs</h3>
                     <ul>
                         <li><a href="#about">Sobre nós</a></li>
-                        <li><a href="#team">Nossa equipe</a></li>
-                        <li><a href="#careers">Trabalhe conosco</a></li>
+                        <li><a href="#feedback">Avaliações</a></li>
+                        <li><a href="#faq">Perguntas frequentes</a></li>
                         <li><a href="#privacy">Política de privacidade</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3>Produtos</h3>
                     <ul>
-                        <li><a href="#featured">Jogos em destaque</a></li>
-                        <li><a href="#all-games">Catálogo completo</a></li>
-                        <li><a href="#new">Lançamentos</a></li>
-                        <li><a href="#upcoming">Em breve</a></li>
+                        <li><a href="#featured">Contas em destaque</a></li>
+                        <li><a href="#all-accounts">Catálogo completo</a></li>
+                        <li><a href="#new">Novas contas</a></li>
+                        <li><a href="#boosting">Serviço de Boosting</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3>Suporte</h3>
                     <ul>
-                        <li><a href="#faq">Perguntas frequentes</a></li>
-                        <li><a href="#contact">Contato</a></li>
-                        <li><a href="#help">Central de ajuda</a></li>
+                        <li><a href="#how-to-buy">Como comprar</a></li>
+                        <li><a href="#payment">Formas de pagamento</a></li>
+                        <li><a href="#delivery">Prazo de entrega</a></li>
                         <li><a href="#terms">Termos de uso</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3>Contato</h3>
                     <ul>
-                        <li><a href="mailto:contato@gameshowcase.com">contato@gameshowcase.com</a></li>
-                        <li><a href="tel:+551133334444">(11) 3333-4444</a></li>
-                        <li><a href="#map">Av. Paulista, 1000 - São Paulo/SP</a></li>
+                        <li><a href="https://discord.gg/reidassmurfs">Discord: ReiDasSmurfs#1234</a></li>
+                        <li><a href="https://wa.me/5511987654321">WhatsApp: (11) 98765-4321</a></li>
                     </ul>
                 </div>
             </div>
             <div class="copyright">
-                &copy; 2025 GameShowcase. Todos os direitos reservados.
+                &copy; 2025 Rei Das Smurfs. Todos os direitos reservados.
             </div>
         </div>
     </footer>
 
     <script>
-        // JavaScript simples para funcionalidade das categorias
+        // JavaScript para funcionalidade das categorias
         document.addEventListener('DOMContentLoaded', function() {
             const categories = document.querySelectorAll('.category');
             
@@ -596,19 +629,19 @@
                     categories.forEach(c => c.classList.remove('active'));
                     this.classList.add('active');
                     
-                    // Aqui você adicionaria lógica para filtrar os jogos por categoria
-                    const selectedCategory = this.textContent;
-                    console.log('Categoria selecionada:', selectedCategory);
+                    // Aqui você adicionaria lógica para filtrar as contas por jogo
+                    const selectedGame = this.textContent;
+                    console.log('Jogo selecionado:', selectedGame);
                     
                     // Simulando filtragem (em uma aplicação real, isso seria mais elaborado)
-                    if (selectedCategory === 'Todos') {
-                        document.querySelectorAll('.game-card').forEach(card => {
+                    if (selectedGame === 'Todos') {
+                        document.querySelectorAll('.account-card').forEach(card => {
                             card.style.display = 'block';
                         });
                     } else {
                         // Este é apenas um exemplo simplificado de filtragem
                         // Em uma aplicação real, você teria atributos de categoria para cada card
-                        alert(`Filtrando por: ${selectedCategory}`);
+                        alert(`Filtrando por: ${selectedGame}`);
                     }
                 });
             });
