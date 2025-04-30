@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameShowcase - Sua Vitrine de Jogos</title>
+    <style>
+        :root {
+            --primary: #7e22ce;
+            --primary-dark: #581c87;
+            --secondary: #2563eb;
+            --dark: #18181b;
+            --light: #f1f5f9;
+            --gray: #64748b;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #0f172a;
+            color: var(--light);
+        }
+        
+        header {
+            background-color: rgba(15, 23, 42, 0.9);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--light);
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            color: var(--primary);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url("/api/placeholder/1920/1080") center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #cbd5e1;
+        }
+        
+        .btn {
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+        
+        .categories {
+            padding: 3rem 0;
+            background-color: #1e293b;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            color: var(--light);
+        }
+        
+        .category-container {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .category {
+            background-color: #334155;
+            padding: 0.7rem 1.5rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .category.active {
+            background-color: var(--primary);
+        }
+        
+        .category:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .featured {
+            padding: 4rem 0;
+        }
+        
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .game-card {
+            background-color: #1e293b;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .game-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .game-image {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+        
+        .game-info {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .game-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--light);
+        }
+        
+        .game-description {
+            color: var(--gray);
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+        
+        .game-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+        }
+        
+        .game-platform {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .platform-icon {
+            width: 20px;
+            height: 20px;
+            background-color: var(--gray);
+            border-radius: 50%;
+        }
+        
+        .game-price {
+            font-weight: bold;
+            color: var(--primary);
+        }
+        
+        .all-games {
+            padding: 4rem 0;
+            background-color: #0f172a;
+        }
+        
+        .newsletter {
+            padding: 4rem 0;
+            background-color: #1e293b;
+            text-align: center;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .newsletter-input {
+            flex-grow: 1;
+            padding: 0.8rem 1rem;
+            border: none;
+            border-radius: 5px 0 0 5px;
+            outline: none;
+        }
+        
+        .newsletter-btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            padding: 0 1.5rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .newsletter-btn:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        footer {
+            background-color: #0f172a;
+            padding: 3rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer-column h3 {
+            color: var(--light);
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-column a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column a:hover {
+            color: var(--primary);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--gray);
+        }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Game<span>Showcase</span></div>
+            <div class="nav-links">
+                <a href="#featured">Destaques</a>
+                <a href="#all-games">Catálogo</a>
+                <a href="#about">Sobre</a>
+                <a href="#contact">Contato</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Descubra os Melhores Jogos</h1>
+            <p>Sua vitrine digital com os jogos mais incríveis e novidades do mundo dos games. Explore nossa coleção e encontre sua próxima aventura.</p>
+            <a href="#all-games" class="btn btn-primary">Ver Catálogo</a>
+        </div>
+    </section>
+
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title">Categorias</h2>
+            <div class="category-container">
+                <div class="category active">Todos</div>
+                <div class="category">Ação</div>
+                <div class="category">Aventura</div>
+                <div class="category">RPG</div>
+                <div class="category">Estratégia</div>
+                <div class="category">Simulação</div>
+                <div class="category">Esportes</div>
+                <div class="category">Indie</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="featured" id="featured">
+        <div class="container">
+            <h2 class="section-title">Jogos em Destaque</h2>
+            <div class="games-grid">
+                <!-- Jogo 1 -->
+                <div class="game-card">
+                    <img src="/api/placeholder/400/200" alt="Jogo 1" class="game-image">
+                    <div class="game-info">
+                        <h3 class="game-title">Nova Era Espacial</h3>
+                        <p class="game-description">Um épico jogo de exploração espacial onde você comanda sua própria nave em um universo aberto cheio de mistérios.</p>
+                        <div class="game-meta">
+                            <div class="game-platform">
+                                <div class="platform-icon"></div>
+                                <div class="platform-icon"></div>
+                            </div>
+                            <div class="game-price">R$ 89,90</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Jogo 2 -->
+                <div class="game-card">
+                    <img src="/api/placeholder/400/200" alt="Jogo 2" class="game-image">
+                    <div class="game-info">
+                        <h3 class="game-title">Lendas do Abismo</h3>
+                        <p class="game-description">Mergulhe em um mundo de fantasia medieval com personagens memoráveis e um sistema de combate revolucionário.</p>
+                        <div class="game-meta">
+                            <div class="game-platform">
+                                <div class="platform-icon"></div>
+                                <div class="platform-icon"></div>
+                                <div class="platform-icon"></div>
+                            </div>
+                            <div class="game-price">R$ 129,90</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Jogo 3 -->
+                <div class="game-card">
+                    <img src="/api/placeholder/400/200" alt="Jogo 3" class="game-image">
+                    <div class="game-info">
+                        <h3 class="game-title">Corrida Futurista</h3>
+                        <p class="game-description">Pilote veículos futuristas em pistas impossíveis a velocidades alucinantes neste jogo de corrida inovador.</p>
+                        <div class="game-meta">
+                            <div class="game-platform">
+                                <div class="platform-icon"></div>
+                            </div>
+                            <div class="game-price">R$ 69,90</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="all-games" id="all-games">
+        <div class="container">
+            <h2 class="section-title">Catálogo Completo</h2>
+            <div class="games-grid">
+                <!-- Jogo 1 -->
+                <div class="game-card">
+                    <img src="/api/placeholder/400/200" alt="Jogo 1" class="game-image">
+                    <div class="game-info">
+                        <h3 class="game-title">Nova Era Espacial</h3>
+                        <p class="game-description">Um épico jogo de exploração espacial onde você comanda sua própria nave.</p>
+                        <div class="game-meta">
+                            <div class="game-platform">
+                                <div class="platform-icon"></div>
+                                <div class="platform-icon"></div>
+                            </div>
+                            <div class="game-price">R$ 89,90</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Jogo 2 -->
+                <div class="game-card">
+                    <img src="/api/placeholder/400/200" alt="Jogo 2" class="game-image">
+                    <div class="game-info">
+                        <h3 class="game-title">Lendas do Abismo</h3>
+                        <p class="game-description">Mergulhe em um mundo de fantasia medieval com personagens memoráveis.</p>
+                        <div class="game-meta">
+                            <div class="game-platform">
+                                <div class="platform-icon"></div>
+                                <div class="platform-icon"></div>
+                                <div class="platform-icon"></div>
+                            </div>
+                            <div class="game-price">R$ 129,90</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Jogo 3 -->
+                <div class="game-card">
+                    <img src="/api/placeholder/400/200" alt="Jogo 3" class="game-image">
+                    <div class="game-info">
+                        <h3 class="game-title">Corrida Futurista</h3>
+                        <p class="game-description">Pilote veículos futuristas em pistas impossíveis a velocidades alucinantes.</p>
+                        <div class="game-meta">
+                            <div class="game-platform">
+                                <div class="platform-icon"></div>
+                            </div>
+                            <div class="game-price">R$ 69,90</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Jogo 4 -->
+                <div class="game-card">
+                    <img src="/api/placeholder/400/200" alt="Jogo 4" class="game-image">
+                    <div class="game-info">
+                        <h3 class="game-title">Mistérios Urbanos</h3>
+                        <p class="game-description">Resolva crimes em uma cidade cheia de segredos neste thriller investigativo.</p>
+                        <div class="game-meta">
+                            <div class="game-platform">
+                                <div class="platform-icon"></div>
+                                <div class="platform-icon"></div>
+                            </div>
+                            <div class="game-price">R$ 79,90</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Jogo 5 -->
+                <div class="game-card">
+                    <img src="/api/placeholder/400/200" alt="Jogo 5" class="game-image">
+                    <div class="game-info">
+                        <h3 class="game-title">Império das Sombras</h3>
+                        <p class="game-description">Construa seu império nas sombras e domine o submundo criminal neste jogo de estratégia.</p>
+                        <div class="game-meta">
+                            <div class="game-platform">
+                                <div class="platform-icon"></div>
+                                <div class="platform-icon"></div>
+                            </div>
+                            <div class="game-price">R$ 99,90</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Jogo 6 -->
+                <div class="game-card">
+                    <img src="/api/placeholder/400/200" alt="Jogo 6" class="game-image">
+                    <div class="game-info">
+                        <h3 class="game-title">Sobrevivência Extrema</h3>
+                        <p class="game-description">Sobreviva em ambientes hostis e construa seu abrigo neste desafiador jogo de sobrevivência.</p>
+                        <div class="game-meta">
+                            <div class="game-platform">
+                                <div class="platform-icon"></div>
+                                <div class="platform-icon"></div>
+                                <div class="platform-icon"></div>
+                            </div>
+                            <div class="game-price">R$ 59,90</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter">
+        <div class="container">
+            <h2 class="section-title">Fique por dentro das novidades!</h2>
+            <p>Cadastre-se para receber atualizações sobre novos lançamentos e promoções especiais.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Seu e-mail" class="newsletter-input">
+                <button type="submit" class="newsletter-btn">Inscrever-se</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>GameShowcase</h3>
+                    <ul>
+                        <li><a href="#about">Sobre nós</a></li>
+                        <li><a href="#team">Nossa equipe</a></li>
+                        <li><a href="#careers">Trabalhe conosco</a></li>
+                        <li><a href="#privacy">Política de privacidade</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Produtos</h3>
+                    <ul>
+                        <li><a href="#featured">Jogos em destaque</a></li>
+                        <li><a href="#all-games">Catálogo completo</a></li>
+                        <li><a href="#new">Lançamentos</a></li>
+                        <li><a href="#upcoming">Em breve</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Suporte</h3>
+                    <ul>
+                        <li><a href="#faq">Perguntas frequentes</a></li>
+                        <li><a href="#contact">Contato</a></li>
+                        <li><a href="#help">Central de ajuda</a></li>
+                        <li><a href="#terms">Termos de uso</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contato</h3>
+                    <ul>
+                        <li><a href="mailto:contato@gameshowcase.com">contato@gameshowcase.com</a></li>
+                        <li><a href="tel:+551133334444">(11) 3333-4444</a></li>
+                        <li><a href="#map">Av. Paulista, 1000 - São Paulo/SP</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 GameShowcase. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript simples para funcionalidade das categorias
+        document.addEventListener('DOMContentLoaded', function() {
+            const categories = document.querySelectorAll('.category');
+            
+            categories.forEach(category => {
+                category.addEventListener('click', function() {
+                    categories.forEach(c => c.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Aqui você adicionaria lógica para filtrar os jogos por categoria
+                    const selectedCategory = this.textContent;
+                    console.log('Categoria selecionada:', selectedCategory);
+                    
+                    // Simulando filtragem (em uma aplicação real, isso seria mais elaborado)
+                    if (selectedCategory === 'Todos') {
+                        document.querySelectorAll('.game-card').forEach(card => {
+                            card.style.display = 'block';
+                        });
+                    } else {
+                        // Este é apenas um exemplo simplificado de filtragem
+                        // Em uma aplicação real, você teria atributos de categoria para cada card
+                        alert(`Filtrando por: ${selectedCategory}`);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
