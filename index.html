@@ -406,20 +406,40 @@
         <div class="container">
             <h2 class="section-title">Contas em Destaque</h2>
             <div class="accounts-grid">
-                <!-- Conta 1 - Dragon Ball Legends (Design Estilizado) -->
-                <div class="account-card" style="position: relative; overflow: hidden;">
-                    <!-- Fundo estilizado em vez de imagem -->
-                    <div style="height: 200px; background: linear-gradient(135deg, #1e3a8a 0%, #3730a3 100%); display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; padding: 1rem;">
-                        <!-- Efeito visual -->
-                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 30% 50%, rgba(79, 70, 229, 0.4) 0%, transparent 70%);"></div>
+                <!-- Conta 1 - Dragon Ball Legends (usando imagem do GitHub) -->
+                <div class="account-card">
+                    <div style="height: 200px; overflow: hidden; position: relative;">
+                        <!-- Imagem do repositório GitHub -->
+                        <img src="images/dbz.jpg" 
+                             alt="Dragon Ball Legends" 
+                             style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;">
                         
-                        <!-- Logo e texto -->
-                        <div style="position: relative; z-index: 2; text-align: center;">
-                            <div style="font-size: 1.2rem; font-weight: bold; color: #f43f5e; margin-bottom: 0.5rem; text-shadow: 0 0 10px rgba(244, 63, 94, 0.7);">DRAGON BALL</div>
-                            <div style="font-size: 2.2rem; font-weight: 800; color: white; text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);">LEGENDS</div>
-                            <div style="background-color: #16a34a; color: white; padding: 0.3rem 0.8rem; border-radius: 0.25rem; font-size: 0.9rem; font-weight: bold; margin-top: 0.8rem; display: inline-block;">100K CHRONO CRYSTAL</div>
+                        <!-- Overlay para melhor legibilidade do texto -->
+                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+                                  background: linear-gradient(0deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 100%);">
+                        </div>
+                        
+                        <!-- Badge no canto superior -->
+                        <div style="position: absolute; top: 15px; left: 15px; background-color: #16a34a; 
+                                  color: white; padding: 6px 12px; border-radius: 4px; font-size: 0.8rem; 
+                                  font-weight: bold; z-index: 10; box-shadow: 0 2px 4px rgba(0,0,0,0.3);">
+                            CHRONO CRYSTAL
+                        </div>
+                        
+                        <!-- Texto centralizado -->
+                        <div style="position: absolute; bottom: 15px; left: 15px; 
+                                  text-align: left; z-index: 5;">
+                            <div style="color: white; font-size: 1.8rem; font-weight: bold; 
+                                     text-shadow: 0 2px 4px rgba(0,0,0,0.8);">
+                                Dragon Ball Legends
+                            </div>
+                            <div style="color: #fbbf24; font-size: 1.3rem; font-weight: bold; 
+                                     text-shadow: 0 2px 4px rgba(0,0,0,0.8);">
+                                100K
+                            </div>
                         </div>
                     </div>
+                    
                     <div class="account-info">
                         <h3 class="account-title">Dragon Ball Legends Premium</h3>
                         <p class="account-description">Contas Dragon Ball Legends 100K CHRONO CRYSTAL PELO MENOR PREÇO</p>
@@ -557,14 +577,22 @@
                     </div>
                 </div>
                 
-                <!-- Conta 4 -->
-                <div class="account-card">
-                    <img src="/api/placeholder/400/200" alt="Solo Leveling" class="account-image">
+                <!-- Conta 7 - Solo Leveling (Design Estilizado) -->
+                <div class="account-card" style="position: relative; overflow: hidden;">
+                    <!-- Fundo estilizado em vez de imagem -->
+                    <div style="height: 200px; background: linear-gradient(135deg, #18181b 0%, #4c1d95 100%); display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; padding: 1rem;">
+                        <!-- Efeito visual -->
+                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 30% 50%, rgba(139, 92, 246, 0.3) 0%, transparent 70%);"></div>
+                        
+                        <!-- Logo e texto -->
+                        <div style="position: relative; z-index: 2; text-align: center;">
+                            <div style="font-size: 1.2rem; font-weight: bold; color: #c4b5fd; margin-bottom: 0.5rem; text-shadow: 0 0 10px rgba(196, 181, 253, 0.7);">SOLO</div>
+                            <div style="font-size: 2.2rem; font-weight: 800; color: white; text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);">LEVELING: ARISE</div>
+                            <div style="background-color: #16a34a; color: white; padding: 0.3rem 0.8rem; border-radius: 0.25rem; font-size: 0.9rem; font-weight: bold; margin-top: 0.8rem; display: inline-block;">200K NÚCLEOS + TICKET 800</div>
+                        </div>
+                    </div>
                     <div class="account-info">
-                        <h3 class="account-title">
-                            <span class="badge badge-new">200K Núcleos</span>
-                            Solo Leveling: Arise
-                        </h3>
+                        <h3 class="account-title">Solo Leveling: Arise</h3>
                         <p class="account-description">Solo Leveling: Arise Contas com 200K Núcleos +Ticket 800 [ENTREGA AUTOMÁTICA]</p>
                         <div class="account-meta">
                             <div class="account-game">Solo Leveling: Arise</div>
@@ -573,175 +601,14 @@
                     </div>
                 </div>
                 
-                <!-- Conta 5 -->
-                <div class="account-card">
-                    <img src="/api/placeholder/400/200" alt="Summoners War" class="account-image">
-                    <div class="account-info">
-                        <h3 class="account-title">
-                            <span class="badge badge-level">LD 5</span>
-                            Summoners War Reroll
-                        </h3>
-                        <p class="account-description">Summoners War: Contas Reroll com LD 5 por Preço Baixo! [Contas Recentes]</p>
-                        <div class="account-meta">
-                            <div class="account-game">Summoners War</div>
-                            <div class="account-price">R$ 2,00</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Conta 6 -->
-                <div class="account-card">
-                    <img src="/api/placeholder/400/200" alt="BLEACH Brave Souls" class="account-image">
-                    <div class="account-info">
-                        <h3 class="account-title">
-                            <span class="badge badge-ranked">ENTREGA AUTOMÁTICA</span>
-                            BLEACH Brave Souls
-                        </h3>
-                        <p class="account-description">Contas BLEACH Brave Souls 50k-100k Servidor Global e Ásia [ENTREGA AUTOMÁTICA]</p>
-                        <div class="account-meta">
-                            <div class="account-game">BLEACH Brave Souls</div>
-                            <div class="account-price">R$ 2,00</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Conta 7 -->
-                <div class="account-card">
-                    <img src="/api/placeholder/400/200" alt="BLACK BEACON" class="account-image">
-                    <div class="account-info">
-                        <h3 class="account-title">
-                            <span class="badge badge-new">MELHOR PREÇO</span>
-                            BLACK BEACON
-                        </h3>
-                        <p class="account-description">BLACK BEACON CONTAS COM DIAMANTES COMECE BEM O JOGO [MELHOR PREÇO]</p>
-                        <div class="account-meta">
-                            <div class="account-game">BLACK BEACON</div>
-                            <div class="account-price">R$ 55,00</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Conta 8 -->
-                <div class="account-card">
-                    <img src="/api/placeholder/400/200" alt="CookieRun Kingdom" class="account-image">
-                    <div class="account-info">
-                        <h3 class="account-title">
-                            <span class="badge badge-level">300K</span>
-                            CookieRun Kingdom
-                        </h3>
-                        <p class="account-description">[MAIS BARATO] Conta Reroll CookieRun: Kingdom +300K Diamantes + Shadow Milk</p>
-                        <div class="account-meta">
-                            <div class="account-game">CookieRun Kingdom</div>
-                            <div class="account-price">R$ 2,00</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Conta 9 -->
-                <div class="account-card">
-                    <img src="/api/placeholder/400/200" alt="INFINITY NIKKI" class="account-image">
-                    <div class="account-info">
-                        <h3 class="account-title">
-                            <span class="badge badge-ranked">MELHOR PREÇO</span>
-                            INFINITY NIKKI
-                        </h3>
-                        <p class="account-description">INFINITY NIKKI Contas com 30K diamante - Servidor AMERICA [MELHOR PREÇO]</p>
-                        <div class="account-meta">
-                            <div class="account-game">INFINITY NIKKI</div>
-                            <div class="account-price">R$ 2,00</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="contact" id="contact">
-        <div class="container">
-            <h2 class="section-title">Entre em Contato</h2>
-            <p>Ficou interessado em alguma conta? Entre em contato conosco pelo Discord ou WhatsApp para mais informações e realizar a compra.</p>
-            <div class="contact-buttons">
-                <a href="https://discord.gg/reidassmurfs" class="btn btn-discord">
-                    Discord: ReiDasSmurfs#1234
-                </a>
-                <a href="https://wa.me/5511987654321" class="btn btn-whatsapp">
-                    WhatsApp: (11) 98765-4321
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>Rei Das Smurfs</h3>
-                    <ul>
-                        <li><a href="#about">Sobre nós</a></li>
-                        <li><a href="#feedback">Avaliações</a></li>
-                        <li><a href="#faq">Perguntas frequentes</a></li>
-                        <li><a href="#privacy">Política de privacidade</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Produtos</h3>
-                    <ul>
-                        <li><a href="#featured">Contas em destaque</a></li>
-                        <li><a href="#all-accounts">Catálogo completo</a></li>
-                        <li><a href="#new">Novas contas</a></li>
-                        <li><a href="#boosting">Serviço de Boosting</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Suporte</h3>
-                    <ul>
-                        <li><a href="#how-to-buy">Como comprar</a></li>
-                        <li><a href="#payment">Formas de pagamento</a></li>
-                        <li><a href="#delivery">Prazo de entrega</a></li>
-                        <li><a href="#terms">Termos de uso</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Contato</h3>
-                    <ul>
-                        <li><a href="https://discord.gg/reidassmurfs">Discord: ReiDasSmurfs#1234</a></li>
-                        <li><a href="https://wa.me/5511987654321">WhatsApp: (11) 98765-4321</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="copyright">
-                &copy; 2025 Rei Das Smurfs. Todos os direitos reservados.
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // JavaScript para funcionalidade das categorias
-        document.addEventListener('DOMContentLoaded', function() {
-            const categories = document.querySelectorAll('.category');
-            
-            categories.forEach(category => {
-                category.addEventListener('click', function() {
-                    categories.forEach(c => c.classList.remove('active'));
-                    this.classList.add('active');
-                    
-                    // Aqui você adicionaria lógica para filtrar as contas por jogo
-                    const selectedGame = this.textContent;
-                    console.log('Jogo selecionado:', selectedGame);
-                    
-                    // Simulando filtragem (em uma aplicação real, isso seria mais elaborado)
-                    if (selectedGame === 'Todos') {
-                        document.querySelectorAll('.account-card').forEach(card => {
-                            card.style.display = 'block';
-                        });
-                    } else {
-                        // Este é apenas um exemplo simplificado de filtragem
-                        // Em uma aplicação real, você teria atributos de categoria para cada card
-                        alert(`Filtrando por: ${selectedGame}`);
-                    }
-                });
-            });
-        });
-    </script>
-</body>
-</html>
+                <!-- Conta 8 - Summoners War (Design Estilizado) -->
+                <div class="account-card" style="position: relative; overflow: hidden;">
+                    <!-- Fundo estilizado em vez de imagem -->
+                    <div style="height: 200px; background: linear-gradient(135deg, #0369a1 0%, #0ea5e9 100%); display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; padding: 1rem;">
+                        <!-- Efeito visual -->
+                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 70% 30%, rgba(186, 230, 253, 0.3) 0%, transparent 70%);"></div>
+                        
+                        <!-- Logo e texto -->
+                        <div style="position: relative; z-index: 2; text-align: center;">
+                            <div style="font-size: 1.2rem; font-weight: bold; color: #bae6fd; margin-bottom: 0.5rem; text-shadow: 0 0 10px rgba(186, 230, 253, 0.7);">SUMMONERS</div>
+                            <div style="font-size: 2.2rem; font-weight: 800; color: white; text-
