@@ -72,7 +72,7 @@
         
         .hero {
             height: 60vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url("/api/placeholder/1920/1080") center/cover;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url("images/wallpaper.jpg") center/cover;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -262,7 +262,7 @@
         
         .contact {
             padding: 4rem 0;
-            background-color: #1e293b;
+            background-color: #111827;
             text-align: center;
         }
         
@@ -318,32 +318,6 @@
             color: var(--gray);
         }
         
-        /* Badge de nível - para contas */
-        .badge {
-            display: inline-block;
-            padding: 0.25rem 0.5rem;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            margin-right: 0.5rem;
-        }
-        
-        .badge-level {
-            background-color: #9333ea;
-            color: white;
-        }
-        
-        .badge-ranked {
-            background-color: #e11d48;
-            color: white;
-        }
-        
-        .badge-new {
-            background-color: #16a34a;
-            color: white;
-        }
-        
-        /* Responsividade */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -377,6 +351,7 @@
         </nav>
     </header>
 
+    <!-- PARTE 1: TÍTULO COM WALLPAPER -->
     <section class="hero">
         <div class="hero-content">
             <h1>A Melhor Loja de Contas Smurf</h1>
@@ -385,6 +360,7 @@
         </div>
     </section>
 
+    <!-- PARTE 2: PRODUTOS/CATÁLOGO -->
     <section class="categories">
         <div class="container">
             <h2 class="section-title">Jogos Disponíveis</h2>
@@ -406,7 +382,7 @@
         <div class="container">
             <h2 class="section-title">Contas em Destaque</h2>
             <div class="accounts-grid">
-                <!-- Conta 1 - Dragon Ball Legends (usando imagem dbz.jpg) -->
+                <!-- Conta 1 - Dragon Ball Legends -->
                 <div class="account-card">
                     <div style="height: 200px; overflow: hidden; position: relative;">
                         <!-- Imagem dbz.jpg -->
@@ -450,7 +426,7 @@
                     </div>
                 </div>
                 
-                <!-- Conta 2 - BLEACH Brave Souls (usando imagem bleach.jpg) -->
+                <!-- Conta 2 - BLEACH Brave Souls -->
                 <div class="account-card">
                     <div style="height: 200px; overflow: hidden; position: relative;">
                         <!-- Imagem bleach.jpg -->
@@ -494,7 +470,7 @@
                     </div>
                 </div>
                 
-                <!-- Conta 3 - Summoners War (usando imagem sw.jpg) -->
+                <!-- Conta 3 - Summoners War -->
                 <div class="account-card">
                     <div style="height: 200px; overflow: hidden; position: relative;">
                         <!-- Imagem sw.jpg -->
@@ -545,14 +521,11 @@
         <div class="container">
             <h2 class="section-title">Catálogo Completo</h2>
             <div class="accounts-grid">
-                <!-- Conta 4 - Blox Fruits (Design Estilizado) -->
+                <!-- Outros cards de jogos estilizados sem imagens -->
+                <!-- Conta 4 - Blox Fruits -->
                 <div class="account-card" style="position: relative; overflow: hidden;">
-                    <!-- Fundo estilizado em vez de imagem -->
                     <div style="height: 200px; background: linear-gradient(135deg, #b91c1c 0%, #f59e0b 100%); display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; padding: 1rem;">
-                        <!-- Efeito visual -->
                         <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 70% 30%, rgba(254, 240, 138, 0.3) 0%, transparent 70%);"></div>
-                        
-                        <!-- Logo e texto -->
                         <div style="position: relative; z-index: 2; text-align: center;">
                             <div style="font-size: 1.2rem; font-weight: bold; color: #fed7aa; margin-bottom: 0.5rem; text-shadow: 0 0 10px rgba(254, 215, 170, 0.7);">BLOX</div>
                             <div style="font-size: 2.2rem; font-weight: 800; color: white; text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);">FRUITS</div>
@@ -569,14 +542,10 @@
                     </div>
                 </div>
                 
-                <!-- Conta 5 - Adopt Me (Design Estilizado) -->
+                <!-- Conta 5 - Adopt Me -->
                 <div class="account-card" style="position: relative; overflow: hidden;">
-                    <!-- Fundo estilizado em vez de imagem -->
                     <div style="height: 200px; background: linear-gradient(135deg, #059669 0%, #10b981 100%); display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; padding: 1rem;">
-                        <!-- Efeito visual -->
                         <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 30% 70%, rgba(167, 243, 208, 0.3) 0%, transparent 70%);"></div>
-                        
-                        <!-- Logo e texto -->
                         <div style="position: relative; z-index: 2; text-align: center;">
                             <div style="font-size: 1.2rem; font-weight: bold; color: #a7f3d0; margin-bottom: 0.5rem; text-shadow: 0 0 10px rgba(167, 243, 208, 0.7);">ADOPT</div>
                             <div style="font-size: 2.2rem; font-weight: 800; color: white; text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);">ME</div>
@@ -593,14 +562,10 @@
                     </div>
                 </div>
                 
-                <!-- Conta 6 - Another Eden (Design Estilizado) -->
+                <!-- Conta 6 - Another Eden -->
                 <div class="account-card" style="position: relative; overflow: hidden;">
-                    <!-- Fundo estilizado em vez de imagem -->
                     <div style="height: 200px; background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; padding: 1rem;">
-                        <!-- Efeito visual -->
                         <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 70% 30%, rgba(191, 219, 254, 0.3) 0%, transparent 70%);"></div>
-                        
-                        <!-- Logo e texto -->
                         <div style="position: relative; z-index: 2; text-align: center;">
                             <div style="font-size: 1.2rem; font-weight: bold; color: #bfdbfe; margin-bottom: 0.5rem; text-shadow: 0 0 10px rgba(191, 219, 254, 0.7);">ANOTHER</div>
                             <div style="font-size: 2.2rem; font-weight: 800; color: white; text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);">EDEN</div>
@@ -616,32 +581,84 @@
                         </div>
                     </div>
                 </div>
-                
-                <!-- Conta 7 - Solo Leveling (Design Estilizado) -->
-                <div class="account-card" style="position: relative; overflow: hidden;">
-                    <!-- Fundo estilizado em vez de imagem -->
-                    <div style="height: 200px; background: linear-gradient(135deg, #18181b 0%, #4c1d95 100%); display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; padding: 1rem;">
-                        <!-- Efeito visual -->
-                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 30% 50%, rgba(139, 92, 246, 0.3) 0%, transparent 70%);"></div>
-                        
-                        <!-- Logo e texto -->
-                        <div style="position: relative; z-index: 2; text-align: center;">
-                            <div style="font-size: 1.2rem; font-weight: bold; color: #c4b5fd; margin-bottom: 0.5rem; text-shadow: 0 0 10px rgba(196, 181, 253, 0.7);">SOLO</div>
-                            <div style="font-size: 2.2rem; font-weight: 800; color: white; text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);">LEVELING: ARISE</div>
-                            <div style="background-color: #16a34a; color: white; padding: 0.3rem 0.8rem; border-radius: 0.25rem; font-size: 0.9rem; font-weight: bold; margin-top: 0.8rem; display: inline-block;">200K NÚCLEOS + TICKET 800</div>
-                        </div>
-                    </div>
-                    <div class="account-info">
-                        <h3 class="account-title">Solo Leveling: Arise</h3>
-                        <p class="account-description">Solo Leveling: Arise Contas com 200K Núcleos +Ticket 800 [ENTREGA AUTOMÁTICA]</p>
-                        <div class="account-meta">
-                            <div class="account-game">Solo Leveling: Arise</div>
-                            <div class="account-price">R$ 2,00</div>
-                        </div>
-                    </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PARTE 3: SEÇÃO ENTRE EM CONTATO/FALE CONOSCO -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Entre em Contato</h2>
+            <p>Ficou interessado em alguma conta? Entre em contato conosco pelo Discord ou WhatsApp para mais informações e realizar a compra.</p>
+            <div class="contact-buttons">
+                <a href="https://discord.gg/reidassmurfs" class="btn btn-discord">
+                    Discord: ReiDasSmurfs#1234
+                </a>
+                <a href="https://wa.me/5511987654321" class="btn btn-whatsapp">
+                    WhatsApp: (11) 98765-4321
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Rei Das Smurfs</h3>
+                    <ul>
+                        <li><a href="#about">Sobre nós</a></li>
+                        <li><a href="#feedback">Avaliações</a></li>
+                        <li><a href="#faq">Perguntas frequentes</a></li>
+                        <li><a href="#privacy">Política de privacidade</a></li>
+                    </ul>
                 </div>
-                
-                <!-- Conta 8 - Goddess of Victory: NIKKE (Design Estilizado) -->
-                <div class="account-card" style="position: relative; overflow: hidden;">
-                    <!-- Fundo estilizado em vez de imagem -->
-                    <div style="height: 200px; background: linear-gradient(135deg, #4c1d95 0%, #9333ea 100%); display: flex; flex-direction: column; justify
+                <div class="footer-column">
+                    <h3>Produtos</h3>
+                    <ul>
+                        <li><a href="#featured">Contas em destaque</a></li>
+                        <li><a href="#all-accounts">Catálogo completo</a></li>
+                        <li><a href="#new">Novas contas</a></li>
+                        <li><a href="#boosting">Serviço de Boosting</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Suporte</h3>
+                    <ul>
+                        <li><a href="#how-to-buy">Como comprar</a></li>
+                        <li><a href="#payment">Formas de pagamento</a></li>
+                        <li><a href="#delivery">Prazo de entrega</a></li>
+                        <li><a href="#terms">Termos de uso</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contato</h3>
+                    <ul>
+                        <li><a href="https://discord.gg/reidassmurfs">Discord: ReiDasSmurfs#1234</a></li>
+                        <li><a href="https://wa.me/5511987654321">WhatsApp: (11) 98765-4321</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 Rei Das Smurfs. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript para funcionalidade das categorias
+        document.addEventListener('DOMContentLoaded', function() {
+            const categories = document.querySelectorAll('.category');
+            
+            categories.forEach(category => {
+                category.addEventListener('click', function() {
+                    categories.forEach(c => c.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Aqui você adicionaria lógica para filtrar as contas por jogo
+                    const selectedGame = this.textContent;
+                    console.log('Jogo selecionado:', selectedGame);
+                    
+                    // Simulando filtragem (em uma aplicação real, isso seria mais elaborado)
+                    if (selectedGame === 'Todos') {
+                        document.quer
