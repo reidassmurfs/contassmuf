@@ -6,7 +6,48 @@
     <title>Rei Das Smurfs - Sua Loja de Contas Smurf</title>
     <style>
         :root {
-            --primary: #2563eb;
+            </div>
+            <div class="copyright">
+                &copy; 2025 Rei Das Smurfs. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript para funcionalidade das categorias
+        document.addEventListener('DOMContentLoaded', function() {
+            const categories = document.querySelectorAll('.category');
+            
+            categories.forEach(category => {
+                category.addEventListener('click', function() {
+                    categories.forEach(c => c.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Aqui você adicionaria lógica para filtrar as contas por jogo
+                    const selectedGame = this.textContent;
+                    console.log('Jogo selecionado:', selectedGame);
+                    
+                    // Simulando filtragem (em uma aplicação real, isso seria mais elaborado)
+                    if (selectedGame === 'Todos') {
+                        document.querySelectorAll('.account-card').forEach(card => {
+                            card.style.display = 'flex';
+                        });
+                    } else {
+                        document.querySelectorAll('.account-card').forEach(card => {
+                            const gameElement = card.querySelector('.account-game');
+                            if (gameElement && gameElement.textContent === selectedGame) {
+                                card.style.display = 'flex';
+                            } else {
+                                card.style.display = 'none';
+                            }
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>--primary: #2563eb;
             --primary-dark: #1d4ed8;
             --secondary: #7e22ce;
             --dark: #18181b;
@@ -255,11 +296,6 @@
             font-size: 1.2rem;
         }
         
-        .all-accounts {
-            padding: 4rem 0;
-            background-color: #0f172a;
-        }
-        
         .contact {
             padding: 4rem 0;
             background-color: #111827;
@@ -415,7 +451,6 @@
             <div class="logo">Rei<span>Das</span>Smurfs</div>
             <div class="nav-links">
                 <a href="#featured">Destaques</a>
-                <a href="#all-accounts">Catálogo</a>
                 <a href="#contact">Contato</a>
                 <a href="#about">Sobre</a>
             </div>
@@ -427,7 +462,7 @@
         <div class="hero-content">
             <h1>A Melhor Loja de Contas Smurf</h1>
             <p>Contas Smurf de qualidade para diversos jogos, com preços imbatíveis e entrega imediata. Eleve seu gameplay com uma nova conta personalizada!</p>
-            <a href="#all-accounts" class="btn btn-primary">Ver Catálogo</a>
+            <a href="#featured" class="btn btn-primary">Ver Catálogo</a>
         </div>
     </section>
 
@@ -438,13 +473,8 @@
             <div class="category-container">
                 <div class="category active">Todos</div>
                 <div class="category">Dragon Ball Legends</div>
-                <div class="category">Goddess of Victory: NIKKE</div>
-                <div class="category">Blue Lock Rivals</div>
-                <div class="category">Blox Fruits</div>
                 <div class="category">Summoners War</div>
                 <div class="category">BLEACH Brave Souls</div>
-                <div class="category">CookieRun Kingdom</div>
-                <div class="category">Outros</div>
             </div>
         </div>
     </section>
@@ -495,259 +525,6 @@
                             <div class="account-price">R$ 2,00</div>
                         </div>
                         
-                        <!-- Lista de Frutas Disponíveis -->
-                        <div class="items-list">
-                            <h4>Frutas Disponíveis:</h4>
-                            <div class="item">
-                                <div class="item-icon" style="background-color: #0ea5e9;">M</div>
-                                <div class="item-info">
-                                    <div class="item-name">Dragon Fruit</div>
-                                    <div class="item-details">Fruta Mítica - Transformação completa</div>
-                                </div>
-                                <span class="item-tag">MÍTICA</span>
-                            </div>
-                            <div class="item">
-                                <div class="item-icon" style="background-color: #8b5cf6;">M</div>
-                                <div class="item-info">
-                                    <div class="item-name">Soul Fruit</div>
-                                    <div class="item-details">Fruta Mítica - Poderes especiais</div>
-                                </div>
-                                <span class="item-tag">MÍTICA</span>
-                            </div>
-                            <div class="item">
-                                <div class="item-icon" style="background-color: #dc2626;">M</div>
-                                <div class="item-info">
-                                    <div class="item-name">Leopard Fruit</div>
-                                    <div class="item-details">Fruta Mítica - Transformação animal</div>
-                                </div>
-                                <span class="item-tag">MÍTICA</span>
-                            </div>
-                            <div class="item">
-                                <div class="item-icon" style="background-color: #ea580c;">L</div>
-                                <div class="item-info">
-                                    <div class="item-name">Buddha Fruit</div>
-                                    <div class="item-details">Fruta Lendária - Transformação gigante</div>
-                                </div>
-                                <span class="item-tag">LENDÁRIA</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Conta 5 - Adopt Me -->
-                <div class="account-card" style="position: relative; overflow: hidden;">
-                    <div style="height: 200px; background: linear-gradient(135deg, #059669 0%, #10b981 100%); display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; padding: 1rem;">
-                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 30% 70%, rgba(167, 243, 208, 0.3) 0%, transparent 70%);"></div>
-                        <div style="position: relative; z-index: 2; text-align: center;">
-                            <div style="font-size: 1.2rem; font-weight: bold; color: #a7f3d0; margin-bottom: 0.5rem; text-shadow: 0 0 10px rgba(167, 243, 208, 0.7);">ADOPT</div>
-                            <div style="font-size: 2.2rem; font-weight: 800; color: white; text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);">ME</div>
-                            <div style="background-color: #9333ea; color: white; padding: 0.3rem 0.8rem; border-radius: 0.25rem; font-size: 0.9rem; font-weight: bold; margin-top: 0.8rem; display: inline-block;">120K BUCKS + POÇÕES</div>
-                        </div>
-                    </div>
-                    <div class="account-info">
-                        <h3 class="account-title">Adopt Me Premium</h3>
-                        <p class="account-description">Adopt Me Contas com 120k Bucks + Poções | Entrega Imediata</p>
-                        <div class="account-meta">
-                            <div class="account-game">Adopt Me</div>
-                            <div class="account-price">R$ 2,00</div>
-                        </div>
-                        
-                        <!-- Lista de Pets Disponíveis -->
-                        <div class="items-list">
-                            <h4>Pets e Itens Disponíveis:</h4>
-                            <div class="item">
-                                <div class="item-icon" style="background-color: #f59e0b;">L</div>
-                                <div class="item-info">
-                                    <div class="item-name">Shadow Dragon</div>
-                                    <div class="item-details">Pet Lendário - Maior valor no jogo</div>
-                                </div>
-                                <span class="item-tag">LENDÁRIO</span>
-                            </div>
-                            <div class="item">
-                                <div class="item-icon" style="background-color: #3b82f6;">L</div>
-                                <div class="item-info">
-                                    <div class="item-name">Frost Dragon</div>
-                                    <div class="item-details">Pet Lendário - Alto valor</div>
-                                </div>
-                                <span class="item-tag">LENDÁRIO</span>
-                            </div>
-                            <div class="item">
-                                <div class="item-icon" style="background-color: #10b981;">P</div>
-                                <div class="item-info">
-                                    <div class="item-name">Poções Fly/Ride</div>
-                                    <div class="item-details">10x Poções Fly + 10x Poções Ride</div>
-                                </div>
-                                <span class="item-tag">ITEM</span>
-                            </div>
-                            <div class="item">
-                                <div class="item-icon" style="background-color: #eab308;">$</div>
-                                <div class="item-info">
-                                    <div class="item-name">120.000 Bucks</div>
-                                    <div class="item-details">Dinheiro suficiente para comprar várias casas</div>
-                                </div>
-                                <span class="item-tag">MONEY</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Conta 6 - Another Eden -->
-                <div class="account-card" style="position: relative; overflow: hidden;">
-                    <div style="height: 200px; background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; padding: 1rem;">
-                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 70% 30%, rgba(191, 219, 254, 0.3) 0%, transparent 70%);"></div>
-                        <div style="position: relative; z-index: 2; text-align: center;">
-                            <div style="font-size: 1.2rem; font-weight: bold; color: #bfdbfe; margin-bottom: 0.5rem; text-shadow: 0 0 10px rgba(191, 219, 254, 0.7);">ANOTHER</div>
-                            <div style="font-size: 2.2rem; font-weight: 800; color: white; text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);">EDEN</div>
-                            <div style="background-color: #e11d48; color: white; padding: 0.3rem 0.8rem; border-radius: 0.25rem; font-size: 0.9rem; font-weight: bold; margin-top: 0.8rem; display: inline-block;">MELHOR PREÇO</div>
-                        </div>
-                    </div>
-                    <div class="account-info">
-                        <h3 class="account-title">Another Eden 100K</h3>
-                        <p class="account-description">Another Eden Contas com 100K Diamantes [MELHOR PREÇO]</p>
-                        <div class="account-meta">
-                            <div class="account-game">Another Eden</div>
-                            <div class="account-price">R$ 2,00</div>
-                        </div>
-                        
-                        <!-- Lista de Personagens Disponíveis -->
-                        <div class="items-list">
-                            <h4>Personagens e Recursos:</h4>
-                            <div class="item">
-                                <div class="item-icon" style="background-color: #dc2626;">5★</div>
-                                <div class="item-info">
-                                    <div class="item-name">Melissa (AS)</div>
-                                    <div class="item-details">Personagem 5★ Another Style</div>
-                                </div>
-                                <span class="item-tag">AS</span>
-                            </div>
-                            <div class="item">
-                                <div class="item-icon" style="background-color: #7c3aed;">5★</div>
-                                <div class="item-info">
-                                    <div class="item-name">Eva (ES)</div>
-                                    <div class="item-details">Personagem 5★ Extra Style</div>
-                                </div>
-                                <span class="item-tag">ES</span>
-                            </div>
-                            <div class="item">
-                                <div class="item-icon" style="background-color: #0891b2;">💎</div>
-                                <div class="item-info">
-                                    <div class="item-name">100.000 Chronos Stones</div>
-                                    <div class="item-details">Diamantes para invocações</div>
-                                </div>
-                                <span class="item-tag">RECURSO</span>
-                            </div>
-                            <div class="item">
-                                <div class="item-icon" style="background-color: #ca8a04;">T</div>
-                                <div class="item-info">
-                                    <div class="item-name">Todos os Episódios</div>
-                                    <div class="item-details">História principal desbloqueada</div>
-                                </div>
-                                <span class="item-tag">CONTEÚDO</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PARTE 3: SEÇÃO ENTRE EM CONTATO/FALE CONOSCO -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <h2 class="section-title">Entre em Contato</h2>
-            <p>Ficou interessado em alguma conta? Entre em contato conosco pelo Discord ou WhatsApp para mais informações e realizar a compra.</p>
-            <div class="contact-buttons">
-                <a href="https://discord.gg/reidassmurfs" class="btn btn-discord">
-                    Discord: ReiDasSmurfs#1234
-                </a>
-                <a href="https://wa.me/5511987654321" class="btn btn-whatsapp">
-                    WhatsApp: (11) 98765-4321
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>Rei Das Smurfs</h3>
-                    <ul>
-                        <li><a href="#about">Sobre nós</a></li>
-                        <li><a href="#feedback">Avaliações</a></li>
-                        <li><a href="#faq">Perguntas frequentes</a></li>
-                        <li><a href="#privacy">Política de privacidade</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Produtos</h3>
-                    <ul>
-                        <li><a href="#featured">Contas em destaque</a></li>
-                        <li><a href="#all-accounts">Catálogo completo</a></li>
-                        <li><a href="#new">Novas contas</a></li>
-                        <li><a href="#boosting">Serviço de Boosting</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Suporte</h3>
-                    <ul>
-                        <li><a href="#how-to-buy">Como comprar</a></li>
-                        <li><a href="#payment">Formas de pagamento</a></li>
-                        <li><a href="#delivery">Prazo de entrega</a></li>
-                        <li><a href="#terms">Termos de uso</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Contato</h3>
-                    <ul>
-                        <li><a href="https://discord.gg/reidassmurfs">Discord: ReiDasSmurfs#1234</a></li>
-                        <li><a href="https://wa.me/5511987654321">WhatsApp: (11) 98765-4321</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="copyright">
-                &copy; 2025 Rei Das Smurfs. Todos os direitos reservados.
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // JavaScript para funcionalidade das categorias
-        document.addEventListener('DOMContentLoaded', function() {
-            const categories = document.querySelectorAll('.category');
-            
-            categories.forEach(category => {
-                category.addEventListener('click', function() {
-                    categories.forEach(c => c.classList.remove('active'));
-                    this.classList.add('active');
-                    
-                    // Aqui você adicionaria lógica para filtrar as contas por jogo
-                    const selectedGame = this.textContent;
-                    console.log('Jogo selecionado:', selectedGame);
-                    
-                    // Simulando filtragem (em uma aplicação real, isso seria mais elaborado)
-                    if (selectedGame === 'Todos') {
-                        document.querySelectorAll('.account-card').forEach(card => {
-                            card.style.display = 'flex';
-                        });
-                    } else {
-                        document.querySelectorAll('.account-card').forEach(card => {
-                            const gameElement = card.querySelector('.account-game');
-                            if (gameElement && gameElement.textContent === selectedGame) {
-                                card.style.display = 'flex';
-                            } else {
-                                card.style.display = 'none';
-                            }
-                        });
-                    }
-                });
-            });
-        });
-    </script>
-</body>
-</html>$ 2,00</div>
-                        </div>
-                        
                         <!-- Lista de Personagens -->
                         <div class="items-list">
                             <h4>Personagens Disponíveis:</h4>
@@ -779,80 +556,7 @@
                     </div>
                 </div>
                 
-                <!-- Conta 2 - BLEACH Brave Souls -->
-                <div class="account-card">
-                    <div style="height: 200px; overflow: hidden; position: relative;">
-                        <!-- Imagem bleach.jpg -->
-                        <img src="images/bleach.jpg" 
-                             alt="BLEACH Brave Souls" 
-                             style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;">
-                        
-                        <!-- Overlay para melhor legibilidade do texto -->
-                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
-                                  background: linear-gradient(0deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 100%);">
-                        </div>
-                        
-                        <!-- Badge no canto superior -->
-                        <div style="position: absolute; top: 15px; left: 15px; background-color: #e11d48; 
-                                  color: white; padding: 6px 12px; border-radius: 4px; font-size: 0.8rem; 
-                                  font-weight: bold; z-index: 10; box-shadow: 0 2px 4px rgba(0,0,0,0.3);">
-                            SPIRIT ORBS
-                        </div>
-                        
-                        <!-- Texto centralizado -->
-                        <div style="position: absolute; bottom: 15px; left: 15px; 
-                                  text-align: left; z-index: 5;">
-                            <div style="color: white; font-size: 1.8rem; font-weight: bold; 
-                                     text-shadow: 0 2px 4px rgba(0,0,0,0.8);">
-                                BLEACH Brave Souls
-                            </div>
-                            <div style="color: #fbbf24; font-size: 1.3rem; font-weight: bold; 
-                                     text-shadow: 0 2px 4px rgba(0,0,0,0.8);">
-                                10K
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="account-info">
-                        <h3 class="account-title">BLEACH Brave Souls Premium</h3>
-                        <p class="account-description">Contas BLEACH Brave Souls com 10K SPIRIT ORBS e personagens raros</p>
-                        <div class="account-meta">
-                            <div class="account-game">BLEACH Brave Souls</div>
-                            <div class="account-price">R$ 2,00</div>
-                        </div>
-                        
-                        <!-- Lista de Personagens -->
-                        <div class="items-list">
-                            <h4>Personagens Disponíveis:</h4>
-                            <div class="item">
-                                <div class="item-icon" style="background-color: #0ea5e9;">6★</div>
-                                <div class="item-info">
-                                    <div class="item-name">Ichigo Bankai Anniversary</div>
-                                    <div class="item-details">Personagem 6 Estrelas Máximo</div>
-                                </div>
-                                <span class="item-tag">LIM</span>
-                            </div>
-                            <div class="item">
-                                <div class="item-icon" style="background-color: #a21caf;">6★</div>
-                                <div class="item-info">
-                                    <div class="item-name">Aizen Hogyoku Fusion</div>
-                                    <div class="item-details">Personagem 6 Estrelas Máximo</div>
-                                </div>
-                                <span class="item-tag">LIM</span>
-                            </div>
-                            <div class="item">
-                                <div class="item-icon" style="background-color: #eab308;">6★</div>
-                                <div class="item-info">
-                                    <div class="item-name">Yamamoto Bankai</div>
-                                    <div class="item-details">Personagem 6 Estrelas Máximo</div>
-                                </div>
-                                <span class="item-tag">LIM</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Conta 3 - Summoners War MODIFICADA -->
+                <!-- Conta 2 - Summoners War MODIFICADA -->
                 <div class="account-card">
                     <div style="height: 200px; overflow: hidden; position: relative;">
                         <!-- Imagem sw.jpg -->
@@ -948,28 +652,133 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Conta 3 - BLEACH Brave Souls -->
+                <div class="account-card">
+                    <div style="height: 200px; overflow: hidden; position: relative;">
+                        <!-- Imagem bleach.jpg -->
+                        <img src="images/bleach.jpg" 
+                             alt="BLEACH Brave Souls" 
+                             style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;">
+                        
+                        <!-- Overlay para melhor legibilidade do texto -->
+                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+                                  background: linear-gradient(0deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 100%);">
+                        </div>
+                        
+                        <!-- Badge no canto superior -->
+                        <div style="position: absolute; top: 15px; left: 15px; background-color: #e11d48; 
+                                  color: white; padding: 6px 12px; border-radius: 4px; font-size: 0.8rem; 
+                                  font-weight: bold; z-index: 10; box-shadow: 0 2px 4px rgba(0,0,0,0.3);">
+                            SPIRIT ORBS
+                        </div>
+                        
+                        <!-- Texto centralizado -->
+                        <div style="position: absolute; bottom: 15px; left: 15px; 
+                                  text-align: left; z-index: 5;">
+                            <div style="color: white; font-size: 1.8rem; font-weight: bold; 
+                                     text-shadow: 0 2px 4px rgba(0,0,0,0.8);">
+                                BLEACH Brave Souls
+                            </div>
+                            <div style="color: #fbbf24; font-size: 1.3rem; font-weight: bold; 
+                                     text-shadow: 0 2px 4px rgba(0,0,0,0.8);">
+                                10K
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="account-info">
+                        <h3 class="account-title">BLEACH Brave Souls Premium</h3>
+                        <p class="account-description">Contas BLEACH Brave Souls com 10K SPIRIT ORBS e personagens raros</p>
+                        <div class="account-meta">
+                            <div class="account-game">BLEACH Brave Souls</div>
+                            <div class="account-price">R$ 2,00</div>
+                        </div>
+                        
+                        <!-- Lista de Personagens -->
+                        <div class="items-list">
+                            <h4>Personagens Disponíveis:</h4>
+                            <div class="item">
+                                <div class="item-icon" style="background-color: #0ea5e9;">6★</div>
+                                <div class="item-info">
+                                    <div class="item-name">Ichigo Bankai Anniversary</div>
+                                    <div class="item-details">Personagem 6 Estrelas Máximo</div>
+                                </div>
+                                <span class="item-tag">LIM</span>
+                            </div>
+                            <div class="item">
+                                <div class="item-icon" style="background-color: #a21caf;">6★</div>
+                                <div class="item-info">
+                                    <div class="item-name">Aizen Hogyoku Fusion</div>
+                                    <div class="item-details">Personagem 6 Estrelas Máximo</div>
+                                </div>
+                                <span class="item-tag">LIM</span>
+                            </div>
+                            <div class="item">
+                                <div class="item-icon" style="background-color: #eab308;">6★</div>
+                                <div class="item-info">
+                                    <div class="item-name">Yamamoto Bankai</div>
+                                    <div class="item-details">Personagem 6 Estrelas Máximo</div>
+                                </div>
+                                <span class="item-tag">LIM</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="all-accounts" id="all-accounts">
+    <!-- PARTE 3: SEÇÃO ENTRE EM CONTATO/FALE CONOSCO -->
+    <section class="contact" id="contact">
         <div class="container">
-            <h2 class="section-title">Catálogo Completo</h2>
-            <div class="accounts-grid">
-                <!-- Outros cards de jogos estilizados sem imagens -->
-                <!-- Conta 4 - Blox Fruits -->
-                <div class="account-card" style="position: relative; overflow: hidden;">
-                    <div style="height: 200px; background: linear-gradient(135deg, #b91c1c 0%, #f59e0b 100%); display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; padding: 1rem;">
-                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 70% 30%, rgba(254, 240, 138, 0.3) 0%, transparent 70%);"></div>
-                        <div style="position: relative; z-index: 2; text-align: center;">
-                            <div style="font-size: 1.2rem; font-weight: bold; color: #fed7aa; margin-bottom: 0.5rem; text-shadow: 0 0 10px rgba(254, 215, 170, 0.7);">BLOX</div>
-                            <div style="font-size: 2.2rem; font-weight: 800; color: white; text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);">FRUITS</div>
-                            <div style="background-color: #e11d48; color: white; padding: 0.3rem 0.8rem; border-radius: 0.25rem; font-size: 0.9rem; font-weight: bold; margin-top: 0.8rem; display: inline-block;">ENTREGA AUTOMÁTICA</div>
-                        </div>
-                    </div>
-                    <div class="account-info">
-                        <h3 class="account-title">Blox Fruits Premium</h3>
-                        <p class="account-description">Blox Fruits Contas Todas funcionando [ENTREGA AUTOMÁTICA]</p>
-                        <div class="account-meta">
-                            <div class="account-game">Blox Fruits</div>
-                            <div class="account-price">R
+            <h2 class="section-title">Entre em Contato</h2>
+            <p>Ficou interessado em alguma conta? Entre em contato conosco pelo Discord ou WhatsApp para mais informações e realizar a compra.</p>
+            <div class="contact-buttons">
+                <a href="https://discord.gg/reidassmurfs" class="btn btn-discord">
+                    Discord: ReiDasSmurfs#1234
+                </a>
+                <a href="https://wa.me/5511987654321" class="btn btn-whatsapp">
+                    WhatsApp: (11) 98765-4321
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Rei Das Smurfs</h3>
+                    <ul>
+                        <li><a href="#about">Sobre nós</a></li>
+                        <li><a href="#feedback">Avaliações</a></li>
+                        <li><a href="#faq">Perguntas frequentes</a></li>
+                        <li><a href="#privacy">Política de privacidade</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Produtos</h3>
+                    <ul>
+                        <li><a href="#featured">Contas em destaque</a></li>
+                        <li><a href="#all-accounts">Catálogo completo</a></li>
+                        <li><a href="#new">Novas contas</a></li>
+                        <li><a href="#boosting">Serviço de Boosting</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Suporte</h3>
+                    <ul>
+                        <li><a href="#how-to-buy">Como comprar</a></li>
+                        <li><a href="#payment">Formas de pagamento</a></li>
+                        <li><a href="#delivery">Prazo de entrega</a></li>
+                        <li><a href="#terms">Termos de uso</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contato</h3>
+                    <ul>
+                        <li><a href="https://discord.gg/reidassmurfs">Discord: ReiDasSmurfs#1234</a></li>
+                        <li><a href="https://wa.me/5511987654321">WhatsApp: (11) 98765-4321</a></li>
+                    </ul>
+                </div>
