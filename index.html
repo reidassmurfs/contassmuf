@@ -64,7 +64,6 @@
             text-decoration: none;
             transition: color 0.3s;
             font-weight: 500;
-            cursor: pointer;
         }
         
         .nav-links a:hover {
@@ -320,24 +319,8 @@
         }
         
         /* Estilos para a seção de Summoners War LD */
-        .sw-ld-section {
-            padding: 0;
-            background-color: #0f172a;
-            display: none; /* Inicialmente oculto, será mostrado ao clicar no card */
-        }
-        
-        .sw-ld-hero {
-            height: 40vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url("images/sw.jpg") center/cover;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 2rem;
-            margin-bottom: 2rem;
-        }
-        
-        .sw-ld-content {
+        #sw-ld-section {
+            display: none;
             padding: 4rem 0;
             background-color: #1e293b;
         }
@@ -348,14 +331,13 @@
             padding: 0.25rem 0.5rem;
             border-radius: 4px;
             font-size: 0.8rem;
-            margin-right: 0.5rem;
-            margin-bottom: 0.5rem;
+            margin: 0.2rem;
             display: inline-block;
         }
         
         .monster-badge.light {
             background-color: #f59e0b;
-            color: #1e293b;
+            color: #0f172a;
         }
         
         .monster-badge.dark {
@@ -363,8 +345,7 @@
         }
         
         .account-monsters {
-            margin-top: 1rem;
-            margin-bottom: 1rem;
+            margin: 1rem 0;
         }
         
         .filter-container {
@@ -387,15 +368,6 @@
         
         .filter-btn:hover, .filter-btn.active {
             background-color: var(--primary);
-        }
-        
-        /* Estilos para o cursor ao passar em cards clicáveis */
-        .clickable {
-            cursor: pointer;
-        }
-        
-        .page-section {
-            display: block;
         }
         
         @media (max-width: 768px) {
@@ -423,208 +395,364 @@
         <nav>
             <div class="logo">Rei<span>Das</span>Smurfs</div>
             <div class="nav-links">
-                <a class="nav-link" data-target="main">Início</a>
-                <a class="nav-link" data-scroll="featured">Destaques</a>
-                <a class="nav-link" data-scroll="all-accounts">Catálogo</a>
-                <a class="nav-link" data-target="sw-ld">Summoners War LD</a>
-                <a class="nav-link" data-scroll="contact">Contato</a>
-                <a class="nav-link" data-scroll="about">Sobre</a>
+                <a href="#" id="home-link">Início</a>
+                <a href="#featured">Destaques</a>
+                <a href="#all-accounts">Catálogo</a>
+                <a href="#" id="sw-ld-link">Summoners War LD</a>
+                <a href="#contact">Contato</a>
+                <a href="#about">Sobre</a>
             </div>
         </nav>
     </header>
 
-    <!-- PÁGINA PRINCIPAL -->
-    <div id="main-page" class="page-section">
+    <!-- CONTEÚDO PRINCIPAL -->
+    <div id="main-content">
         <!-- PARTE 1: TÍTULO COM WALLPAPER -->
         <section class="hero">
             <div class="hero-content">
-                <h2 class="section-title">Monstros Light & Dark (LD) Disponíveis</h2>
-                <p style="text-align: center; margin-bottom: 2rem;">Todas as nossas contas são recentes e possuem pelo menos 1 monstro LD Nat 5★ garantido. Escolha abaixo a conta perfeita para você!</p>
-                
-                <div class="filter-container">
-                    <button class="filter-btn active" data-filter="all">Todos</button>
-                    <button class="filter-btn" data-filter="light">Light</button>
-                    <button class="filter-btn" data-filter="dark">Dark</button>
-                    <button class="filter-btn" data-filter="duo">2+ LDs</button>
-                </div>
-                
-                <div class="accounts-grid">
-                    <!-- Conta LD 1 -->
-                    <div class="account-card ld-card" data-type="light">
-                        <div style="height: 200px; background: linear-gradient(135deg, #f59e0b 0%, #fcd34d 100%); display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; padding: 1rem;">
-                            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 30% 70%, rgba(254, 240, 138, 0.4) 0%, transparent 70%);"></div>
-                            <div style="position: relative; z-index: 2; text-align: center;">
-                                <div style="font-size: 1.2rem; font-weight: bold; color: #0f172a; margin-bottom: 0.5rem;">LIGHT</div>
-                                <div style="font-size: 2.2rem; font-weight: 800; color: #0f172a; text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);">Panda Warrior</div>
-                                <div style="background-color: #0f172a; color: white; padding: 0.3rem 0.8rem; border-radius: 0.25rem; font-size: 0.9rem; font-weight: bold; margin-top: 0.8rem; display: inline-block;">TIAN LANG</div>
-                            </div>
-                        </div>
-                        
-                        <div class="account-info">
-                            <h3 class="account-title">Conta com Tian Lang</h3>
-                            <p class="account-description">Conta Summoners War recente com Light Panda Warrior (Tian Lang). Conta limpa, ideal para início.</p>
-                            
-                            <div class="account-monsters">
-                                <span class="monster-badge light">Tian Lang</span>
-                                <span class="monster-badge">50K Cristais</span>
-                                <span class="monster-badge">LDs Extras</span>
-                            </div>
-                            
-                            <div class="account-meta">
-                                <a href="https://wa.me/5511987654321" class="btn btn-primary" style="font-size: 0.9rem; padding: 0.5rem 1rem;">Comprar Agora</a>
-                                <div class="account-price">R$ 2,00</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Conta LD 2 -->
-                    <div class="account-card ld-card" data-type="dark">
-                        <div style="height: 200px; background: linear-gradient(135deg, #7e22ce 0%, #a855f7 100%); display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; padding: 1rem;">
-                            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 30% 70%, rgba(216, 180, 254, 0.3) 0%, transparent 70%);"></div>
-                            <div style="position: relative; z-index: 2; text-align: center;">
-                                <div style="font-size: 1.2rem; font-weight: bold; color: #e9d5ff; margin-bottom: 0.5rem;">DARK</div>
-                                <div style="font-size: 2.2rem; font-weight: 800; color: white; text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);">Demon</div>
-                                <div style="background-color: #0f172a; color: white; padding: 0.3rem 0.8rem; border-radius: 0.25rem; font-size: 0.9rem; font-weight: bold; margin-top: 0.8rem; display: inline-block;">BEELZEBUB</div>
-                            </div>
-                        </div>
-                        
-                        <div class="account-info">
-                            <h3 class="account-title">Conta com Beelzebub</h3>
-                            <p class="account-description">Conta Summoners War recente com Dark Demon (Beelzebub). Conta limpa, ideal para início.</p>
-                            
-                            <div class="account-monsters">
-                                <span class="monster-badge dark">Beelzebub</span>
-                                <span class="monster-badge">50K Cristais</span>
-                                <span class="monster-badge">LDs Extras</span>
-                            </div>
-                            
-                            <div class="account-meta">
-                                <a href="https://wa.me/5511987654321" class="btn btn-primary" style="font-size: 0.9rem; padding: 0.5rem 1rem;">Comprar Agora</a>
-                                <div class="account-price">R$ 2,00</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Conta LD 3 -->
-                    <div class="account-card ld-card" data-type="light">
-                        <div style="height: 200px; background: linear-gradient(135deg, #f59e0b 0%, #fcd34d 100%); display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; padding: 1rem;">
-                            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 30% 70%, rgba(254, 240, 138, 0.4) 0%, transparent 70%);"></div>
-                            <div style="position: relative; z-index: 2; text-align: center;">
-                                <div style="font-size: 1.2rem; font-weight: bold; color: #0f172a; margin-bottom: 0.5rem;">LIGHT</div>
-                                <div style="font-size: 2.2rem; font-weight: 800; color: #0f172a; text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);">Dragon</div>
-                                <div style="background-color: #0f172a; color: white; padding: 0.3rem 0.8rem; border-radius: 0.25rem; font-size: 0.9rem; font-weight: bold; margin-top: 0.8rem; display: inline-block;">ZERATH</div>
-                            </div>
-                        </div>
-                        
-                        <div class="account-info">
-                            <h3 class="account-title">Conta com Zerath</h3>
-                            <p class="account-description">Conta Summoners War recente com Light Dragon (Zerath). Conta limpa, ideal para início.</p>
-                            
-                            <div class="account-monsters">
-                                <span class="monster-badge light">Zerath</span>
-                                <span class="monster-badge">50K Cristais</span>
-                                <span class="monster-badge">LDs Extras</span>
-                            </div>
-                            
-                            <div class="account-meta">
-                                <a href="https://wa.me/5511987654321" class="btn btn-primary" style="font-size: 0.9rem; padding: 0.5rem 1rem;">Comprar Agora</a>
-                                <div class="account-price">R$ 2,00</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Conta LD 4 -->
-                    <div class="account-card ld-card" data-type="dark">
-                        <div style="height: 200px; background: linear-gradient(135deg, #7e22ce 0%, #a855f7 100%); display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; padding: 1rem;">
-                            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 30% 70%, rgba(216, 180, 254, 0.3) 0%, transparent 70%);"></div>
-                            <div style="position: relative; z-index: 2; text-align: center;">
-                                <div style="font-size: 1.2rem; font-weight: bold; color: #e9d5ff; margin-bottom: 0.5rem;">DARK</div>
-                                <div style="font-size: 2.2rem; font-weight: 800; color: white; text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);">Dragon Knight</div>
-                                <div style="background-color: #0f172a; color: white; padding: 0.3rem 0.8rem; border-radius: 0.25rem; font-size: 0.9rem; font-weight: bold; margin-top: 0.8rem; display: inline-block;">RAGDOLL</div>
-                            </div>
-                        </div>
-                        
-                        <div class="account-info">
-                            <h3 class="account-title">Conta com Ragdoll</h3>
-                            <p class="account-description">Conta Summoners War recente com Dark Dragon Knight (Ragdoll). Conta limpa, ideal para início.</p>
-                            
-                            <div class="account-monsters">
-                                <span class="monster-badge dark">Ragdoll</span>
-                                <span class="monster-badge">50K Cristais</span>
-                                <span class="monster-badge">LDs Extras</span>
-                            </div>
-                            
-                            <div class="account-meta">
-                                <a href="https://wa.me/5511987654321" class="btn btn-primary" style="font-size: 0.9rem; padding: 0.5rem 1rem;">Comprar Agora</a>
-                                <div class="account-price">R$ 2,00</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Conta LD 5 - Duo LD -->
-                    <div class="account-card ld-card" data-type="duo">
-                        <div style="height: 200px; background: linear-gradient(135deg, #f59e0b 0%, #7e22ce 100%); display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; padding: 1rem;">
-                            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 30% 70%, rgba(254, 215, 170, 0.3) 0%, transparent 70%);"></div>
-                            <div style="position: relative; z-index: 2; text-align: center;">
-                                <div style="font-size: 1.2rem; font-weight: bold; color: white; margin-bottom: 0.5rem;">LIGHT + DARK</div>
-                                <div style="font-size: 2rem; font-weight: 800; color: white; text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);">COMBO PREMIUM</div>
-                                <div style="background-color: #0f172a; color: white; padding: 0.3rem 0.8rem; border-radius: 0.25rem; font-size: 0.9rem; font-weight: bold; margin-top: 0.8rem; display: inline-block;">DOUBLE LD</div>
-                            </div>
-                        </div>
-                        
-                        <div class="account-info">
-                            <h3 class="account-title">Combo LD: Akroma + Giana</h3>
-                            <p class="account-description">Conta Summoners War recente com Light Valkyria (Akroma) e Dark Oracle (Giana). A melhor opção para players competitivos!</p>
-                            
-                            <div class="account-monsters">
-                                <span class="monster-badge light">Akroma</span>
-                                <span class="monster-badge dark">Giana</span>
-                                <span class="monster-badge">100K Cristais</span>
-                                <span class="monster-badge">LDs Extras</span>
-                            </div>
-                            
-                            <div class="account-meta">
-                                <a href="https://wa.me/5511987654321" class="btn btn-primary" style="font-size: 0.9rem; padding: 0.5rem 1rem;">Comprar Agora</a>
-                                <div class="account-price">R$ 2,00</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Conta LD 6 -->
-                    <div class="account-card ld-card" data-type="light">
-                        <div style="height: 200px; background: linear-gradient(135deg, #f59e0b 0%, #fcd34d 100%); display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; padding: 1rem;">
-                            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 30% 70%, rgba(254, 240, 138, 0.4) 0%, transparent 70%);"></div>
-                            <div style="position: relative; z-index: 2; text-align: center;">
-                                <div style="font-size: 1.2rem; font-weight: bold; color: #0f172a; margin-bottom: 0.5rem;">LIGHT</div>
-                                <div style="font-size: 2.2rem; font-weight: 800; color: #0f172a; text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);">Phoenix</div>
-                                <div style="background-color: #0f172a; color: white; padding: 0.3rem 0.8rem; border-radius: 0.25rem; font-size: 0.9rem; font-weight: bold; margin-top: 0.8rem; display: inline-block;">ELUDIA</div>
-                            </div>
-                        </div>
-                        
-                        <div class="account-info">
-                            <h3 class="account-title">Conta com Eludia</h3>
-                            <p class="account-description">Conta Summoners War recente com Light Phoenix (Eludia). Conta limpa, ideal para início.</p>
-                            
-                            <div class="account-monsters">
-                                <span class="monster-badge light">Eludia</span>
-                                <span class="monster-badge">50K Cristais</span>
-                                <span class="monster-badge">LDs Extras</span>
-                            </div>
-                            
-                            <div class="account-meta">
-                                <a href="https://wa.me/5511987654321" class="btn btn-primary" style="font-size: 0.9rem; padding: 0.5rem 1rem;">Comprar Agora</a>
-                                <div class="account-price">R$ 2,00</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div style="text-align: center; margin-top: 2rem;">
-                    <button class="btn btn-primary nav-link" data-target="main">Voltar para o catálogo</button>
+                <h1>A Melhor Loja de Contas Smurf</h1>
+                <p>Contas Smurf de qualidade para diversos jogos, com preços imbatíveis e entrega imediata. Eleve seu gameplay com uma nova conta personalizada!</p>
+                <a href="#all-accounts" class="btn btn-primary">Ver Catálogo</a>
+            </div>
+        </section>
+
+        <!-- PARTE 2: PRODUTOS/CATÁLOGO -->
+        <section class="categories">
+            <div class="container">
+                <h2 class="section-title">Jogos Disponíveis</h2>
+                <div class="category-container">
+                    <div class="category active">Todos</div>
+                    <div class="category">Dragon Ball Legends</div>
+                    <div class="category">Goddess of Victory: NIKKE</div>
+                    <div class="category">Blue Lock Rivals</div>
+                    <div class="category">Blox Fruits</div>
+                    <div class="category">Summoners War</div>
+                    <div class="category">BLEACH Brave Souls</div>
+                    <div class="category">CookieRun Kingdom</div>
+                    <div class="category">Outros</div>
                 </div>
             </div>
         </section>
-    </div>
+
+        <section class="featured" id="featured">
+            <div class="container">
+                <h2 class="section-title">Contas em Destaque</h2>
+                <div class="accounts-grid">
+                    <!-- Conta 1 - Dragon Ball Legends -->
+                    <div class="account-card">
+                        <div style="height: 200px; overflow: hidden; position: relative;">
+                            <!-- Imagem dbz.jpg -->
+                            <img src="images/dbz.jpg" 
+                                 alt="Dragon Ball Legends" 
+                                 style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;">
+                            
+                            <!-- Overlay para melhor legibilidade do texto -->
+                            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+                                      background: linear-gradient(0deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 100%);">
+                            </div>
+                            
+                            <!-- Badge no canto superior -->
+                            <div style="position: absolute; top: 15px; left: 15px; background-color: #16a34a; 
+                                      color: white; padding: 6px 12px; border-radius: 4px; font-size: 0.8rem; 
+                                      font-weight: bold; z-index: 10; box-shadow: 0 2px 4px rgba(0,0,0,0.3);">
+                                CHRONO CRYSTAL
+                            </div>
+                            
+                            <!-- Texto centralizado -->
+                            <div style="position: absolute; bottom: 15px; left: 15px; 
+                                      text-align: left; z-index: 5;">
+                                <div style="color: white; font-size: 1.8rem; font-weight: bold; 
+                                         text-shadow: 0 2px 4px rgba(0,0,0,0.8);">
+                                    Dragon Ball Legends
+                                </div>
+                                <div style="color: #fbbf24; font-size: 1.3rem; font-weight: bold; 
+                                         text-shadow: 0 2px 4px rgba(0,0,0,0.8);">
+                                    100K
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="account-info">
+                            <h3 class="account-title">Dragon Ball Legends Premium</h3>
+                            <p class="account-description">Contas Dragon Ball Legends 100K CHRONO CRYSTAL PELO MENOR PREÇO</p>
+                            <div class="account-meta">
+                                <div class="account-game">Dragon Ball Legends</div>
+                                <div class="account-price">R$ 2,00</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Conta 2 - BLEACH Brave Souls -->
+                    <div class="account-card">
+                        <div style="height: 200px; overflow: hidden; position: relative;">
+                            <!-- Imagem bleach.jpg -->
+                            <img src="images/bleach.jpg" 
+                                 alt="BLEACH Brave Souls" 
+                                 style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;">
+                            
+                            <!-- Overlay para melhor legibilidade do texto -->
+                            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+                                      background: linear-gradient(0deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 100%);">
+                            </div>
+                            
+                            <!-- Badge no canto superior -->
+                            <div style="position: absolute; top: 15px; left: 15px; background-color: #e11d48; 
+                                      color: white; padding: 6px 12px; border-radius: 4px; font-size: 0.8rem; 
+                                      font-weight: bold; z-index: 10; box-shadow: 0 2px 4px rgba(0,0,0,0.3);">
+                                SPIRIT ORBS
+                            </div>
+                            
+                            <!-- Texto centralizado -->
+                            <div style="position: absolute; bottom: 15px; left: 15px; 
+                                      text-align: left; z-index: 5;">
+                                <div style="color: white; font-size: 1.8rem; font-weight: bold; 
+                                         text-shadow: 0 2px 4px rgba(0,0,0,0.8);">
+                                    BLEACH Brave Souls
+                                </div>
+                                <div style="color: #fbbf24; font-size: 1.3rem; font-weight: bold; 
+                                         text-shadow: 0 2px 4px rgba(0,0,0,0.8);">
+                                    10K
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="account-info">
+                            <h3 class="account-title">BLEACH Brave Souls Premium</h3>
+                            <p class="account-description">Contas BLEACH Brave Souls com 10K SPIRIT ORBS e personagens raros</p>
+                            <div class="account-meta">
+                                <div class="account-game">BLEACH Brave Souls</div>
+                                <div class="account-price">R$ 2,00</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Conta 3 - Summoners War MODIFICADA -->
+                    <div class="account-card" id="summoners-war-card" style="cursor: pointer;">
+                        <div style="height: 200px; overflow: hidden; position: relative;">
+                            <!-- Imagem sw.jpg -->
+                            <img src="images/sw.jpg" 
+                                alt="Summoners War" 
+                                style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;">
+                            
+                            <!-- Overlay para melhor legibilidade do texto -->
+                            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+                                    background: linear-gradient(0deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 100%);">
+                            </div>
+                            
+                            <!-- Badge no canto superior -->
+                            <div style="position: absolute; top: 15px; left: 15px; background-color: #9333ea; 
+                                    color: white; padding: 6px 12px; border-radius: 4px; font-size: 0.8rem; 
+                                    font-weight: bold; z-index: 10; box-shadow: 0 2px 4px rgba(0,0,0,0.3);">
+                                MONSTROS LD NAT 5★
+                            </div>
+                            
+                            <!-- Texto centralizado -->
+                            <div style="position: absolute; bottom: 15px; left: 15px; 
+                                    text-align: left; z-index: 5;">
+                                <div style="color: white; font-size: 1.8rem; font-weight: bold; 
+                                        text-shadow: 0 2px 4px rgba(0,0,0,0.8);">
+                                    Summoners War
+                                </div>
+                                <div style="color: #fbbf24; font-size: 1.3rem; font-weight: bold; 
+                                        text-shadow: 0 2px 4px rgba(0,0,0,0.8);">
+                                    CONTAS RECENTES COM LD
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="account-info">
+                            <h3 class="account-title">Summoners War - Contas com LD</h3>
+                            <p class="account-description">Contas Summoners War recentes com monstros LD Nat 5★ garantidos</p>
+                            <div class="account-meta">
+                                <div class="account-game">Summoners War</div>
+                                <div class="account-price">R$ 2,00</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="all-accounts" id="all-accounts">
+            <div class="container">
+                <h2 class="section-title">Catálogo Completo</h2>
+                <div class="accounts-grid">
+                    <!-- Outros cards de jogos estilizados sem imagens -->
+                    <!-- Conta 4 - Blox Fruits -->
+                    <div class="account-card" style="position: relative; overflow: hidden;">
+                        <div style="height: 200px; background: linear-gradient(135deg, #b91c1c 0%, #f59e0b 100%); display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; padding: 1rem;">
+                            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 70% 30%, rgba(254, 240, 138, 0.3) 0%, transparent 70%);"></div>
+                            <div style="position: relative; z-index: 2; text-align: center;">
+                                <div style="font-size: 1.2rem; font-weight: bold; color: #fed7aa; margin-bottom: 0.5rem; text-shadow: 0 0 10px rgba(254, 215, 170, 0.7);">BLOX</div>
+                                <div style="font-size: 2.2rem; font-weight: 800; color: #0f172a; text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);">Panda Warrior</div>
+                            <div style="background-color: #0f172a; color: white; padding: 0.3rem 0.8rem; border-radius: 0.25rem; font-size: 0.9rem; font-weight: bold; margin-top: 0.8rem; display: inline-block;">TIAN LANG</div>
+                        </div>
+                    </div>
+                    
+                    <div class="account-info">
+                        <h3 class="account-title">Conta com Tian Lang</h3>
+                        <p class="account-description">Conta Summoners War recente com Light Panda Warrior (Tian Lang). Conta limpa, ideal para início.</p>
+                        
+                        <div class="account-monsters">
+                            <span class="monster-badge light">Tian Lang</span>
+                            <span class="monster-badge">50K Cristais</span>
+                            <span class="monster-badge">LDs Extras</span>
+                        </div>
+                        
+                        <div class="account-meta">
+                            <a href="https://wa.me/5511987654321" class="btn btn-primary" style="font-size: 0.9rem; padding: 0.5rem 1rem;">Comprar Agora</a>
+                            <div class="account-price">R$ 2,00</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Conta LD 2 -->
+                <div class="account-card ld-card" data-type="dark">
+                    <div style="height: 200px; background: linear-gradient(135deg, #7e22ce 0%, #a855f7 100%); display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; padding: 1rem;">
+                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 30% 70%, rgba(216, 180, 254, 0.3) 0%, transparent 70%);"></div>
+                        <div style="position: relative; z-index: 2; text-align: center;">
+                            <div style="font-size: 1.2rem; font-weight: bold; color: #e9d5ff; margin-bottom: 0.5rem;">DARK</div>
+                            <div style="font-size: 2.2rem; font-weight: 800; color: white; text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);">Demon</div>
+                            <div style="background-color: #0f172a; color: white; padding: 0.3rem 0.8rem; border-radius: 0.25rem; font-size: 0.9rem; font-weight: bold; margin-top: 0.8rem; display: inline-block;">BEELZEBUB</div>
+                        </div>
+                    </div>
+                    
+                    <div class="account-info">
+                        <h3 class="account-title">Conta com Beelzebub</h3>
+                        <p class="account-description">Conta Summoners War recente com Dark Demon (Beelzebub). Conta limpa, ideal para início.</p>
+                        
+                        <div class="account-monsters">
+                            <span class="monster-badge dark">Beelzebub</span>
+                            <span class="monster-badge">50K Cristais</span>
+                            <span class="monster-badge">LDs Extras</span>
+                        </div>
+                        
+                        <div class="account-meta">
+                            <a href="https://wa.me/5511987654321" class="btn btn-primary" style="font-size: 0.9rem; padding: 0.5rem 1rem;">Comprar Agora</a>
+                            <div class="account-price">R$ 2,00</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Conta LD 3 -->
+                <div class="account-card ld-card" data-type="light">
+                    <div style="height: 200px; background: linear-gradient(135deg, #f59e0b 0%, #fcd34d 100%); display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; padding: 1rem;">
+                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 30% 70%, rgba(254, 240, 138, 0.4) 0%, transparent 70%);"></div>
+                        <div style="position: relative; z-index: 2; text-align: center;">
+                            <div style="font-size: 1.2rem; font-weight: bold; color: #0f172a; margin-bottom: 0.5rem;">LIGHT</div>
+                            <div style="font-size: 2.2rem; font-weight: 800; color: #0f172a; text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);">Dragon</div>
+                            <div style="background-color: #0f172a; color: white; padding: 0.3rem 0.8rem; border-radius: 0.25rem; font-size: 0.9rem; font-weight: bold; margin-top: 0.8rem; display: inline-block;">ZERATH</div>
+                        </div>
+                    </div>
+                    
+                    <div class="account-info">
+                        <h3 class="account-title">Conta com Zerath</h3>
+                        <p class="account-description">Conta Summoners War recente com Light Dragon (Zerath). Conta limpa, ideal para início.</p>
+                        
+                        <div class="account-monsters">
+                            <span class="monster-badge light">Zerath</span>
+                            <span class="monster-badge">50K Cristais</span>
+                            <span class="monster-badge">LDs Extras</span>
+                        </div>
+                        
+                        <div class="account-meta">
+                            <a href="https://wa.me/5511987654321" class="btn btn-primary" style="font-size: 0.9rem; padding: 0.5rem 1rem;">Comprar Agora</a>
+                            <div class="account-price">R$ 2,00</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Conta LD 4 -->
+                <div class="account-card ld-card" data-type="dark">
+                    <div style="height: 200px; background: linear-gradient(135deg, #7e22ce 0%, #a855f7 100%); display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; padding: 1rem;">
+                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 30% 70%, rgba(216, 180, 254, 0.3) 0%, transparent 70%);"></div>
+                        <div style="position: relative; z-index: 2; text-align: center;">
+                            <div style="font-size: 1.2rem; font-weight: bold; color: #e9d5ff; margin-bottom: 0.5rem;">DARK</div>
+                            <div style="font-size: 2.2rem; font-weight: 800; color: white; text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);">Dragon Knight</div>
+                            <div style="background-color: #0f172a; color: white; padding: 0.3rem 0.8rem; border-radius: 0.25rem; font-size: 0.9rem; font-weight: bold; margin-top: 0.8rem; display: inline-block;">RAGDOLL</div>
+                        </div>
+                    </div>
+                    
+                    <div class="account-info">
+                        <h3 class="account-title">Conta com Ragdoll</h3>
+                        <p class="account-description">Conta Summoners War recente com Dark Dragon Knight (Ragdoll). Conta limpa, ideal para início.</p>
+                        
+                        <div class="account-monsters">
+                            <span class="monster-badge dark">Ragdoll</span>
+                            <span class="monster-badge">50K Cristais</span>
+                            <span class="monster-badge">LDs Extras</span>
+                        </div>
+                        
+                        <div class="account-meta">
+                            <a href="https://wa.me/5511987654321" class="btn btn-primary" style="font-size: 0.9rem; padding: 0.5rem 1rem;">Comprar Agora</a>
+                            <div class="account-price">R$ 2,00</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Conta LD 5 - Duo LD -->
+                <div class="account-card ld-card" data-type="duo">
+                    <div style="height: 200px; background: linear-gradient(135deg, #f59e0b 0%, #7e22ce 100%); display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; padding: 1rem;">
+                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 30% 70%, rgba(254, 215, 170, 0.3) 0%, transparent 70%);"></div>
+                        <div style="position: relative; z-index: 2; text-align: center;">
+                            <div style="font-size: 1.2rem; font-weight: bold; color: white; margin-bottom: 0.5rem;">LIGHT + DARK</div>
+                            <div style="font-size: 2rem; font-weight: 800; color: white; text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);">COMBO PREMIUM</div>
+                            <div style="background-color: #0f172a; color: white; padding: 0.3rem 0.8rem; border-radius: 0.25rem; font-size: 0.9rem; font-weight: bold; margin-top: 0.8rem; display: inline-block;">DOUBLE LD</div>
+                        </div>
+                    </div>
+                    
+                    <div class="account-info">
+                        <h3 class="account-title">Combo LD: Akroma + Giana</h3>
+                        <p class="account-description">Conta Summoners War recente com Light Valkyria (Akroma) e Dark Oracle (Giana). A melhor opção para players competitivos!</p>
+                        
+                        <div class="account-monsters">
+                            <span class="monster-badge light">Akroma</span>
+                            <span class="monster-badge dark">Giana</span>
+                            <span class="monster-badge">100K Cristais</span>
+                            <span class="monster-badge">LDs Extras</span>
+                        </div>
+                        
+                        <div class="account-meta">
+                            <a href="https://wa.me/5511987654321" class="btn btn-primary" style="font-size: 0.9rem; padding: 0.5rem 1rem;">Comprar Agora</a>
+                            <div class="account-price">R$ 2,00</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Conta LD 6 -->
+                <div class="account-card ld-card" data-type="light">
+                    <div style="height: 200px; background: linear-gradient(135deg, #f59e0b 0%, #fcd34d 100%); display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; padding: 1rem;">
+                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 30% 70%, rgba(254, 240, 138, 0.4) 0%, transparent 70%);"></div>
+                        <div style="position: relative; z-index: 2; text-align: center;">
+                            <div style="font-size: 1.2rem; font-weight: bold; color: #0f172a; margin-bottom: 0.5rem;">LIGHT</div>
+                            <div style="font-size: 2.2rem; font-weight: 800; color: #0f172a; text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);">Phoenix</div>
+                            <div style="background-color: #0f172a; color: white; padding: 0.3rem 0.8rem; border-radius: 0.25rem; font-size: 0.9rem; font-weight: bold; margin-top: 0.8rem; display: inline-block;">ELUDIA</div>
+                        </div>
+                    </div>
+                    
+                    <div class="account-info">
+                        <h3 class="account-title">Conta com Eludia</h3>
+                        <p class="account-description">Conta Summoners War recente com Light Phoenix (Eludia). Conta limpa, ideal para início.</p>
+                        
+                        <div class="account-monsters">
+                            <span class="monster-badge light">Eludia</span>
+                            <span class="monster-badge">50K Cristais</span>
+                            <span class="monster-badge">LDs Extras</span>
+                        </div>
+                        
+                        <div class="account-meta">
+                            <a href="https://wa.me/5511987654321" class="btn btn-primary" style="font-size: 0.9rem; padding: 0.5rem 1rem;">Comprar Agora</a>
+                            <div class="account-price">R$ 2,00</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 2rem;">
+                <button id="back-to-main" class="btn btn-primary">Voltar para o catálogo</button>
+            </div>
+        </div>
+    </section>
     
     <!-- PARTE 3: SEÇÃO ENTRE EM CONTATO/FALE CONOSCO -->
     <section class="contact" id="contact">
@@ -687,24 +815,17 @@
     </footer>
 
     <script>
-        // JavaScript para funcionalidade das categorias e navegação entre páginas
+        // JavaScript para funcionalidade das categorias e navegação
         document.addEventListener('DOMContentLoaded', function() {
             const categories = document.querySelectorAll('.category');
-            const navLinks = document.querySelectorAll('.nav-link');
-            const summornersWarCard = document.getElementById('summoners-war-card');
+            const mainContent = document.getElementById('main-content');
+            const swLdSection = document.getElementById('sw-ld-section');
+            const summonersWarCard = document.getElementById('summoners-war-card');
+            const swLdLink = document.getElementById('sw-ld-link');
+            const backToMainBtn = document.getElementById('back-to-main');
+            const homeLink = document.getElementById('home-link');
             const filterButtons = document.querySelectorAll('.filter-btn');
             const ldCards = document.querySelectorAll('.ld-card');
-            const mainPage = document.getElementById('main-page');
-            const swLdPage = document.getElementById('sw-ld-page');
-            
-            // Função para mostrar página específica
-            function showPage(pageId) {
-                const pages = document.querySelectorAll('.page-section');
-                pages.forEach(page => {
-                    page.style.display = page.id === pageId + '-page' ? 'block' : 'none';
-                });
-                window.scrollTo(0, 0);
-            }
             
             // Funcionalidade para as categorias de jogos
             categories.forEach(category => {
@@ -715,11 +836,11 @@
                     const selectedGame = this.textContent;
                     
                     if (selectedGame === 'Todos') {
-                        document.querySelectorAll('.account-card:not(.ld-card)').forEach(card => {
+                        document.querySelectorAll('.account-card').forEach(card => {
                             card.style.display = 'flex';
                         });
                     } else {
-                        document.querySelectorAll('.account-card:not(.ld-card)').forEach(card => {
+                        document.querySelectorAll('.account-card').forEach(card => {
                             const gameElement = card.querySelector('.account-game');
                             if (gameElement && gameElement.textContent === selectedGame) {
                                 card.style.display = 'flex';
@@ -731,43 +852,30 @@
                 });
             });
             
-            // Navegação entre páginas
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const target = this.getAttribute('data-target');
-                    const scrollTarget = this.getAttribute('data-scroll');
-                    
-                    if (target) {
-                        showPage(target);
-                    } else if (scrollTarget) {
-                        // Para links que rolam para uma seção específica
-                        showPage('main');
-                        setTimeout(() => {
-                            const element = document.getElementById(scrollTarget);
-                            if (element) {
-                                element.scrollIntoView({ behavior: 'smooth' });
-                            }
-                        }, 100);
-                    }
-                });
+            // Função para mostrar/esconder seções
+            function showSwLdSection() {
+                mainContent.style.display = 'none';
+                swLdSection.style.display = 'block';
+                window.scrollTo(0, 0);
+            }
+            
+            function showMainContent() {
+                swLdSection.style.display = 'none';
+                mainContent.style.display = 'block';
+                window.scrollTo(0, 0);
+            }
+            
+            // Event listeners para navegação
+            summonersWarCard.addEventListener('click', showSwLdSection);
+            swLdLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                showSwLdSection();
             });
             
-            // Ao clicar no card do Summoners War
-            summornersWarCard.addEventListener('click', function() {
-                showPage('sw-ld');
-            });
-            
-            // Links de scroll na página principal
-            document.querySelectorAll('.scroll-link').forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const scrollTarget = this.getAttribute('data-scroll');
-                    const element = document.getElementById(scrollTarget);
-                    if (element) {
-                        element.scrollIntoView({ behavior: 'smooth' });
-                    }
-                });
+            backToMainBtn.addEventListener('click', showMainContent);
+            homeLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                showMainContent();
             });
             
             // Filtros para os cards de LD
@@ -787,187 +895,10 @@
                     });
                 });
             });
-            
-            // Garantir que a página inicial seja mostrada ao carregar
-            showPage('main');
         });
     </script>
 </body>
-</html>1>A Melhor Loja de Contas Smurf</h1>
-                <p>Contas Smurf de qualidade para diversos jogos, com preços imbatíveis e entrega imediata. Eleve seu gameplay com uma nova conta personalizada!</p>
-                <a class="btn btn-primary scroll-link" data-scroll="all-accounts">Ver Catálogo</a>
-            </div>
-        </section>
-
-        <!-- PARTE 2: PRODUTOS/CATÁLOGO -->
-        <section class="categories">
-            <div class="container">
-                <h2 class="section-title">Jogos Disponíveis</h2>
-                <div class="category-container">
-                    <div class="category active">Todos</div>
-                    <div class="category">Dragon Ball Legends</div>
-                    <div class="category">Goddess of Victory: NIKKE</div>
-                    <div class="category">Blue Lock Rivals</div>
-                    <div class="category">Blox Fruits</div>
-                    <div class="category">Summoners War</div>
-                    <div class="category">BLEACH Brave Souls</div>
-                    <div class="category">CookieRun Kingdom</div>
-                    <div class="category">Outros</div>
-                </div>
-            </div>
-        </section>
-
-        <section class="featured" id="featured">
-            <div class="container">
-                <h2 class="section-title">Contas em Destaque</h2>
-                <div class="accounts-grid">
-                    <!-- Conta 1 - Dragon Ball Legends -->
-                    <div class="account-card">
-                        <div style="height: 200px; overflow: hidden; position: relative;">
-                            <!-- Imagem dbz.jpg -->
-                            <img src="images/dbz.jpg" 
-                                alt="Dragon Ball Legends" 
-                                style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;">
-                            
-                            <!-- Overlay para melhor legibilidade do texto -->
-                            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
-                                    background: linear-gradient(0deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 100%);">
-                            </div>
-                            
-                            <!-- Badge no canto superior -->
-                            <div style="position: absolute; top: 15px; left: 15px; background-color: #16a34a; 
-                                    color: white; padding: 6px 12px; border-radius: 4px; font-size: 0.8rem; 
-                                    font-weight: bold; z-index: 10; box-shadow: 0 2px 4px rgba(0,0,0,0.3);">
-                                CHRONO CRYSTAL
-                            </div>
-                            
-                            <!-- Texto centralizado -->
-                            <div style="position: absolute; bottom: 15px; left: 15px; 
-                                    text-align: left; z-index: 5;">
-                                <div style="color: white; font-size: 1.8rem; font-weight: bold; 
-                                        text-shadow: 0 2px 4px rgba(0,0,0,0.8);">
-                                    Dragon Ball Legends
-                                </div>
-                                <div style="color: #fbbf24; font-size: 1.3rem; font-weight: bold; 
-                                        text-shadow: 0 2px 4px rgba(0,0,0,0.8);">
-                                    100K
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="account-info">
-                            <h3 class="account-title">Dragon Ball Legends Premium</h3>
-                            <p class="account-description">Contas Dragon Ball Legends 100K CHRONO CRYSTAL PELO MENOR PREÇO</p>
-                            <div class="account-meta">
-                                <div class="account-game">Dragon Ball Legends</div>
-                                <div class="account-price">R$ 2,00</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Conta 2 - BLEACH Brave Souls -->
-                    <div class="account-card">
-                        <div style="height: 200px; overflow: hidden; position: relative;">
-                            <!-- Imagem bleach.jpg -->
-                            <img src="images/bleach.jpg" 
-                                alt="BLEACH Brave Souls" 
-                                style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;">
-                            
-                            <!-- Overlay para melhor legibilidade do texto -->
-                            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
-                                    background: linear-gradient(0deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 100%);">
-                            </div>
-                            
-                            <!-- Badge no canto superior -->
-                            <div style="position: absolute; top: 15px; left: 15px; background-color: #e11d48; 
-                                    color: white; padding: 6px 12px; border-radius: 4px; font-size: 0.8rem; 
-                                    font-weight: bold; z-index: 10; box-shadow: 0 2px 4px rgba(0,0,0,0.3);">
-                                SPIRIT ORBS
-                            </div>
-                            
-                            <!-- Texto centralizado -->
-                            <div style="position: absolute; bottom: 15px; left: 15px; 
-                                    text-align: left; z-index: 5;">
-                                <div style="color: white; font-size: 1.8rem; font-weight: bold; 
-                                        text-shadow: 0 2px 4px rgba(0,0,0,0.8);">
-                                    BLEACH Brave Souls
-                                </div>
-                                <div style="color: #fbbf24; font-size: 1.3rem; font-weight: bold; 
-                                        text-shadow: 0 2px 4px rgba(0,0,0,0.8);">
-                                    10K
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="account-info">
-                            <h3 class="account-title">BLEACH Brave Souls Premium</h3>
-                            <p class="account-description">Contas BLEACH Brave Souls com 10K SPIRIT ORBS e personagens raros</p>
-                            <div class="account-meta">
-                                <div class="account-game">BLEACH Brave Souls</div>
-                                <div class="account-price">R$ 2,00</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Conta 3 - Summoners War MODIFICADA -->
-                    <div class="account-card clickable" id="summoners-war-card">
-                        <div style="height: 200px; overflow: hidden; position: relative;">
-                            <!-- Imagem sw.jpg -->
-                            <img src="images/sw.jpg" 
-                                alt="Summoners War" 
-                                style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;">
-                            
-                            <!-- Overlay para melhor legibilidade do texto -->
-                            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
-                                    background: linear-gradient(0deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 100%);">
-                            </div>
-                            
-                            <!-- Badge no canto superior -->
-                            <div style="position: absolute; top: 15px; left: 15px; background-color: #9333ea; 
-                                    color: white; padding: 6px 12px; border-radius: 4px; font-size: 0.8rem; 
-                                    font-weight: bold; z-index: 10; box-shadow: 0 2px 4px rgba(0,0,0,0.3);">
-                                MONSTROS LD NAT 5★
-                            </div>
-                            
-                            <!-- Texto centralizado -->
-                            <div style="position: absolute; bottom: 15px; left: 15px; 
-                                    text-align: left; z-index: 5;">
-                                <div style="color: white; font-size: 1.8rem; font-weight: bold; 
-                                        text-shadow: 0 2px 4px rgba(0,0,0,0.8);">
-                                    Summoners War
-                                </div>
-                                <div style="color: #fbbf24; font-size: 1.3rem; font-weight: bold; 
-                                        text-shadow: 0 2px 4px rgba(0,0,0,0.8);">
-                                    CONTAS RECENTES COM LD
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="account-info">
-                            <h3 class="account-title">Summoners War - Contas com LD</h3>
-                            <p class="account-description">Contas Summoners War recentes com monstros LD Nat 5★ garantidos</p>
-                            <div class="account-meta">
-                                <div class="account-game">Summoners War</div>
-                                <div class="account-price">R$ 2,00</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="all-accounts" id="all-accounts">
-            <div class="container">
-                <h2 class="section-title">Catálogo Completo</h2>
-                <div class="accounts-grid">
-                    <!-- Outros cards de jogos estilizados sem imagens -->
-                    <!-- Conta 4 - Blox Fruits -->
-                    <div class="account-card" style="position: relative; overflow: hidden;">
-                        <div style="height: 200px; background: linear-gradient(135deg, #b91c1c 0%, #f59e0b 100%); display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; padding: 1rem;">
-                            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 70% 30%, rgba(254, 240, 138, 0.3) 0%, transparent 70%);"></div>
-                            <div style="position: relative; z-index: 2; text-align: center;">
-                                <div style="font-size: 1.2rem; font-weight: bold; color: #fed7aa; margin-bottom: 0.5rem; text-shadow: 0 0 10px rgba(254, 215, 170, 0.7);">BLOX</div>
-                                <div style="font-size: 2.2rem; font-weight: 800; color: white; text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);">FRUITS</div>
+</html> 800; color: white; text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);">FRUITS</div>
                                 <div style="background-color: #e11d48; color: white; padding: 0.3rem 0.8rem; border-radius: 0.25rem; font-size: 0.9rem; font-weight: bold; margin-top: 0.8rem; display: inline-block;">ENTREGA AUTOMÁTICA</div>
                             </div>
                         </div>
@@ -1025,15 +956,24 @@
         </section>
     </div>
 
-    <!-- PÁGINA SUMMONERS WAR LD (inicialmente oculta) -->
-    <div id="sw-ld-page" class="sw-ld-section page-section">
-        <section class="sw-ld-hero">
-            <div class="hero-content">
-                <h1>Contas Summoners War com LD</h1>
-                <p>Contas recentes com monstros Light & Dark (LD) Nat 5★ garantidos. Eleve seu jogo com unidades exclusivas!</p>
+    <!-- SEÇÃO SUMMONERS WAR LD (inicialmente oculta) -->
+    <section id="sw-ld-section">
+        <div class="container">
+            <h2 class="section-title">Contas Summoners War com LD</h2>
+            <p style="text-align: center; margin-bottom: 2rem;">Contas recentes com monstros Light & Dark (LD) Nat 5★ garantidos. Escolha abaixo a conta perfeita para você!</p>
+            
+            <div class="filter-container">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="light">Light</button>
+                <button class="filter-btn" data-filter="dark">Dark</button>
+                <button class="filter-btn" data-filter="duo">2+ LDs</button>
             </div>
-        </section>
-        
-        <section class="sw-ld-content">
-            <div class="container">
-                <h
+            
+            <div class="accounts-grid">
+                <!-- Conta LD 1 -->
+                <div class="account-card ld-card" data-type="light">
+                    <div style="height: 200px; background: linear-gradient(135deg, #f59e0b 0%, #fcd34d 100%); display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; padding: 1rem;">
+                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 30% 70%, rgba(254, 240, 138, 0.4) 0%, transparent 70%);"></div>
+                        <div style="position: relative; z-index: 2; text-align: center;">
+                            <div style="font-size: 1.2rem; font-weight: bold; color: #0f172a; margin-bottom: 0.5rem;">LIGHT</div>
+                            <div style="font-size: 2.2rem; font-weight:
