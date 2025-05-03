@@ -6,48 +6,7 @@
     <title>Rei Das Smurfs - Sua Loja de Contas Smurf</title>
     <style>
         :root {
-            </div>
-            <div class="copyright">
-                &copy; 2025 Rei Das Smurfs. Todos os direitos reservados.
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // JavaScript para funcionalidade das categorias
-        document.addEventListener('DOMContentLoaded', function() {
-            const categories = document.querySelectorAll('.category');
-            
-            categories.forEach(category => {
-                category.addEventListener('click', function() {
-                    categories.forEach(c => c.classList.remove('active'));
-                    this.classList.add('active');
-                    
-                    // Aqui você adicionaria lógica para filtrar as contas por jogo
-                    const selectedGame = this.textContent;
-                    console.log('Jogo selecionado:', selectedGame);
-                    
-                    // Simulando filtragem (em uma aplicação real, isso seria mais elaborado)
-                    if (selectedGame === 'Todos') {
-                        document.querySelectorAll('.account-card').forEach(card => {
-                            card.style.display = 'flex';
-                        });
-                    } else {
-                        document.querySelectorAll('.account-card').forEach(card => {
-                            const gameElement = card.querySelector('.account-game');
-                            if (gameElement && gameElement.textContent === selectedGame) {
-                                card.style.display = 'flex';
-                            } else {
-                                card.style.display = 'none';
-                            }
-                        });
-                    }
-                });
-            });
-        });
-    </script>
-</body>
-</html>--primary: #2563eb;
+            --primary: #2563eb;
             --primary-dark: #1d4ed8;
             --secondary: #7e22ce;
             --dark: #18181b;
@@ -761,9 +720,7 @@
                     <h3>Produtos</h3>
                     <ul>
                         <li><a href="#featured">Contas em destaque</a></li>
-                        <li><a href="#all-accounts">Catálogo completo</a></li>
-                        <li><a href="#new">Novas contas</a></li>
-                        <li><a href="#boosting">Serviço de Boosting</a></li>
+                        <li><a href="#contact">Entre em contato</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -782,3 +739,6 @@
                         <li><a href="https://wa.me/5511987654321">WhatsApp: (11) 98765-4321</a></li>
                     </ul>
                 </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 Rei Das Smurfs. Todos os direitos reservados.
